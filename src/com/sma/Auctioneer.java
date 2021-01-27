@@ -114,7 +114,7 @@ public class Auctioneer extends Agent {
 			if (auction.getFase() == AuctionFase.Open) {
 				if (msg.getPerformative() == ACLMessage.REQUEST) {
 					bidders.add(msg.getSender());
-					response.setContent(MessageType.ACCEPT.toString() + "\n");
+					response.setContent(MessageType.JOIN.toString() + "\n");
 					response.addReceiver(msg.getSender());
 					System.out.println("Auctioneer sent ACCEPT to :" + msg.getSender());
 				}
