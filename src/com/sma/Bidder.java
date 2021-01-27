@@ -77,8 +77,20 @@ public class Bidder extends Agent{
 
 		@Override
 		public void action() {
-			// TODO Auto-generated method stub
-
+			ACLMessage msg = myAgent.receive();
+			switch (msg.getPerformative()) {
+			case ACLMessage.ACCEPT_PROPOSAL: {
+				
+				break;
+			}
+			case ACLMessage.REFUSE: {
+				
+				break;
+			}
+			default:
+				throw new IllegalArgumentException("Unexpected value: " + msg.getPerformative());
+			}
+			
 		}
 	}
 }
