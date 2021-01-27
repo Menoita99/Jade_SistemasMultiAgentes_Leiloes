@@ -75,28 +75,29 @@ public class Auctioneer extends Agent {
 		@Override
 		public void action() {
 			ACLMessage msg = myAgent.receive();
-			MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
-			switch (type) {
-			case JOIN: {
-				processJoin(msg);
-				break;
+			if (msg != null) {
+				MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
+				switch (type) {
+				case JOIN: {
+					processJoin(msg);
+					break;
+				}
+				case BIDDING: {
+					processBidding(msg);
+					break;
+				}
+				case PRIORITIES: {
+					processPriorities(msg);
+					break;
+				}
+				case WINNER: {
+					// processWinner(msg);
+					break;
+				}
+				default:
+					throw new IllegalArgumentException("Unexpected value: " + type);
+				}
 			}
-			case BIDDING: {
-				processBidding(msg);
-				break;
-			}
-			case PRIORITIES: {
-				processPriorities(msg);
-				break;
-			}
-			case WINNER: {
-				// processWinner(msg);
-				break;
-			}
-			default:
-				throw new IllegalArgumentException("Unexpected value: " + type);
-			}
-
 		}
 
 		private void processPriorities(ACLMessage msg) {
@@ -114,7 +115,7 @@ public class Auctioneer extends Agent {
 			if (auction.getFase() == AuctionFase.Open) {
 				if (msg.getPerformative() == ACLMessage.REQUEST) {
 					bidders.add(msg.getSender());
-					response.setContent(MessageType.ACCEPT.toString() + "\n");
+					response.setContent(MessageType.JOIN.toString() + "\n");
 					response.addReceiver(msg.getSender());
 					System.out.println("Auctioneer sent ACCEPT to :" + msg.getSender());
 				}
