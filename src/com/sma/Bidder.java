@@ -1,5 +1,11 @@
 package com.sma;
 
+import java.lang.reflect.Type;
+import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
@@ -20,6 +26,9 @@ public class Bidder extends Agent{
 	private BidderBehavior behavior = new BidderBehavior();
 	private AID auctionner;
 
+	private int money = 0;
+	
+	
 	@Override
 	protected void setup() {
 		try {
@@ -46,8 +55,8 @@ public class Bidder extends Agent{
 				ACLMessage newMsg = new ACLMessage(ACLMessage.REQUEST); 
 				newMsg.setContent(MessageType.JOIN.toString()+"\n");
 				newMsg.addReceiver(result[i].getName());
+				send(newMsg);
 			}
-			
 			if(auctionner == null)
 				Thread.sleep(1000);
 		}
@@ -71,6 +80,18 @@ public class Bidder extends Agent{
 	}
 
 
+
+
+
+
+
+	public void chooseItemPriorities(List<AuctionItem> itens) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
 	
 	
 	
@@ -83,12 +104,12 @@ public class Bidder extends Agent{
 			ACLMessage msg = myAgent.receive();
 			MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
 			switch (type) {
-			case ACCEPT: {
-				processAccept(msg);
+			case JOIN: {
+				processJoin(msg);
 				break;
 			}
-			case REFUSE: {
-				processRefuse(msg);
+			case BIDDING: {
+				processBidding(msg);
 				break;
 			}
 			case START_ROUND: {
@@ -107,19 +128,36 @@ public class Bidder extends Agent{
 				throw new IllegalArgumentException("Unexpected value: " + type);
 			}
 		}
-
 		
 		
-		private void processRefuse(ACLMessage msg) {
+		
+		private void processBidding(ACLMessage msg) {
 			// TODO Auto-generated method stub
-			
+		}
+
+
+
+		private void processJoin(ACLMessage msg) {
+			if(msg.getPerformative() == ACLMessage.ACCEPT_PROPOSAL) {
+				if(auctionner == null)
+					auctionner = msg.getSender();
+				else {
+					ACLMessage newMsg = new ACLMessage(ACLMessage.REFUSE); 
+					newMsg.setContent(MessageType.JOIN.toString()+"\n");
+					newMsg.addReceiver(msg.getSender());
+					send(newMsg);
+				}
+			}
 		}
 
 
 
 		private void processStartRound(ACLMessage msg) {
-			// TODO Auto-generated method stub
-			
+			money += 100;
+			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
+			Type listType = new TypeToken<List<AuctionItem>>() {}.getType();
+			List<AuctionItem> itens = new Gson().fromJson(json, listType);
+			chooseItemPriorities(itens);
 		}
 
 
@@ -135,12 +173,6 @@ public class Bidder extends Agent{
 			// TODO Auto-generated method stub
 			
 		}
-
-
-
-		private void processAccept(ACLMessage msg) {
-			// TODO Auto-generated method stub
-			
-		}
 	}
+
 }
