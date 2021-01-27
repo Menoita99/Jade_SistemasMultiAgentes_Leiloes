@@ -44,7 +44,7 @@ public class Bidder extends Agent{
 			DFAgentDescription[] result = DFService.search(this, template);
 			for (int i = 0; i < result.length; i++) {
 				ACLMessage newMsg = new ACLMessage(ACLMessage.REQUEST); 
-				newMsg.setContent("join");
+				newMsg.setContent(MessageType.JOIN.toString()+"\n");
 				newMsg.addReceiver(result[i].getName());
 			}
 			
@@ -71,6 +71,9 @@ public class Bidder extends Agent{
 	}
 
 
+	
+	
+	
 	private class BidderBehavior extends CyclicBehaviour{
 
 		private static final long serialVersionUID = 1L;
@@ -78,18 +81,65 @@ public class Bidder extends Agent{
 		@Override
 		public void action() {
 			ACLMessage msg = myAgent.receive();
-			switch (msg.getPerformative()) {
-			case ACLMessage.ACCEPT_PROPOSAL: {
-				
+			MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
+			switch (type) {
+			case ACCEPT: {
+				processAccept(msg);
 				break;
 			}
-			case ACLMessage.REFUSE: {
-				
+			case REFUSE: {
+				processRefuse(msg);
+				break;
+			}
+			case START_ROUND: {
+				processStartRound(msg);
+				break;
+			}
+			case WINNER: {
+				processWinner(msg);
+				break;
+			}
+			case OVER: {
+				processOver(msg);
 				break;
 			}
 			default:
-				throw new IllegalArgumentException("Unexpected value: " + msg.getPerformative());
+				throw new IllegalArgumentException("Unexpected value: " + type);
 			}
+		}
+
+		
+		
+		private void processRefuse(ACLMessage msg) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+
+		private void processStartRound(ACLMessage msg) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+
+		private void processWinner(ACLMessage msg) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+
+		private void processOver(ACLMessage msg) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+
+		private void processAccept(ACLMessage msg) {
+			// TODO Auto-generated method stub
 			
 		}
 	}
