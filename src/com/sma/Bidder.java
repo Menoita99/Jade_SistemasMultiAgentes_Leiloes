@@ -181,7 +181,7 @@ public class Bidder extends Agent{
 		private void bid() {
 			Random r = new Random();
 			double price = currentItemInAuction.getPrice();
-			int priceProb = -5 * (money/20);
+			int priceProb = -5 + (money/20);
 			int prioProb = 10 + currentItemPriority * 5;
 			int bidProb = prioProb + priceProb;
 			

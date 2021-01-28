@@ -24,10 +24,10 @@ public class Auction {
 	}
 	
 	
-	public List<AuctionItem> nextRound(){
+	public LinkedList<AuctionItem> nextRound(){
 		if((round+1)*numberOfItemsPerRound < items.size()) {
 			round++;
-			return items.subList((round-1)*numberOfItemsPerRound, (round)*numberOfItemsPerRound);
+			return (LinkedList<AuctionItem>) items.subList((round-1)*numberOfItemsPerRound, (round)*numberOfItemsPerRound);
 		}
 		return null;
 	}

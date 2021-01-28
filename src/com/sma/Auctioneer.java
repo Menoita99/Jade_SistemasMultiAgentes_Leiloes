@@ -35,8 +35,10 @@ public class Auctioneer extends Agent {
 	private ScheduledExecutorService executer = Executors.newSingleThreadScheduledExecutor();
 	private AuctioneerBehavior behavior = new AuctioneerBehavior();
 	private LinkedList<AID> bidders = new LinkedList<>();
-	private List<AuctionItem> auctionItems;
+	private LinkedList<AuctionItem> auctionItems;
 	private Map<AID, String> priorities = new HashMap<AID, String>();
+	private OneSchedualTimer biddingTimer;
+	
 
 	public Auctioneer() {
 		auction = new Auction();
@@ -46,7 +48,7 @@ public class Auctioneer extends Agent {
 	protected void setup() {
 		try {
 			regist();
-			addBehaviour(behavior); 
+			addBehaviour(behavior);
 			startJoinPhase(20);
 		} catch (FIPAException e) {
 			e.printStackTrace();
@@ -62,10 +64,10 @@ public class Auctioneer extends Agent {
 
 	private void startAuction() {
 		auction.setFase(AuctionFase.onGoing);
-		sendStartingMessage();
+		startNewRound();
 	}
 
-	private void sendStartingMessage() {
+	private void startNewRound() {
 		ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
 		auctionItems = auction.nextRound();
 		Gson gson = new Gson();
@@ -76,16 +78,28 @@ public class Auctioneer extends Agent {
 		msg.setContent(MessageType.START_ROUND.toString() + "\n" + msgAux);
 		System.out.println("Sent message: " + msg);
 		send(msg);
-		
+
 		executer.schedule(() -> {
-			startBiddingPhase();
+			biddingPhase();
 		}, 10, TimeUnit.SECONDS);
-		
+
 	}
 
-
-	private void startBiddingPhase() {
-		
+	private void biddingPhase() {
+		if (!auctionItems.isEmpty()) {
+			Gson gson = new Gson();
+			ACLMessage biddingMessage = new ACLMessage(ACLMessage.INFORM);
+			biddingMessage.setContent(MessageType.START_BIDDING.toString() + "\n" + gson.toJson(auctionItems.pop()));
+			for (AID bidder : bidders)
+				biddingMessage.addReceiver(bidder);
+			send(biddingMessage);
+			biddingTimer = new OneSchedualTimer(()-> {
+				biddingPhase();
+				//TODO: Send winner
+			}, 5000); 
+		} else {
+			startNewRound();
+		}
 	}
 
 	private void regist() throws FIPAException {
@@ -107,40 +121,40 @@ public class Auctioneer extends Agent {
 		@Override
 		public void action() {
 			ACLMessage msg = myAgent.receive();
-			if (msg != null) {	 
+			if (msg != null) {
 				MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
 				switch (type) {
-				case JOIN:{
+				case JOIN: {
 					processJoin(msg);
 					break;
-				}case BIDDING: {
+				}
+				case BIDDING: {
 					processBidding(msg);
 					break;
 				}
 				case PRIORITIES: {
 					processPriorities(msg);
-					break; 	
+					break;
 				}
-				case WINNER: { 	
+				case WINNER: {
 					// processWinner(msg);
 					break;
 				}
 				default:
 					throw new IllegalArgumentException("Unexpected value: " + type);
 				}
-			}else {
+			} else {
 				this.block();
-			} 
+			}
 		}
-		
+
 		private void processPriorities(ACLMessage msg) {
-			String prioritiesMsg = msg.getContent().split("\n")[1];
-			priorities.put(msg.getSender(), prioritiesMsg);
-			System.out.println(prioritiesMsg);
-		} 	
+			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
+			System.out.println(json);
+		}
 
 		private void processBidding(ACLMessage msg) {
-			
+			biddingTimer.restart(5000);
 		}
 
 		private void processJoin(ACLMessage msg) {
@@ -166,7 +180,7 @@ public class Auctioneer extends Agent {
 	}
 
 	public static void main(String[] args) {
-		//new Auctioneer().getItemsJson();
+		// new Auctioneer().getItemsJson();
 	}
 
 }
