@@ -51,7 +51,7 @@ public class Auctioneer extends Agent {
 		try {
 			regist();
 			addBehaviour(behavior);
-			startJoinPhase(7);
+			startJoinPhase(9);
 		} catch (FIPAException e) {
 			e.printStackTrace();
 		}
@@ -109,9 +109,12 @@ public class Auctioneer extends Agent {
 			startNewRound();
 		}
 	}
+	
+	
+	
+	
 
 	private void regist() throws FIPAException {
-
 		DFAgentDescription dfd = new DFAgentDescription();
 		ServiceDescription sd = new ServiceDescription();
 		dfd.setName(getAID());
@@ -122,6 +125,10 @@ public class Auctioneer extends Agent {
 		System.out.println("Auctionner " + getName() + " with aid " + getAID() + " ready");
 	}
 
+	
+	
+	
+	
 	private class AuctioneerBehavior extends CyclicBehaviour {
 
 		private static final long serialVersionUID = 1L;
@@ -173,7 +180,6 @@ public class Auctioneer extends Agent {
 		
 		
 		
-		
 		private void processBidding(ACLMessage msg) {
 			biddingTimer.restart(5000);
 		}
@@ -204,6 +210,9 @@ public class Auctioneer extends Agent {
 		}
 	}
 
+	
+	
+	
 	public static void main(String[] args) {
 		// new Auctioneer().getItemsJson();
 	}
