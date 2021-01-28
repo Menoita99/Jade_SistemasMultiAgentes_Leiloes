@@ -111,7 +111,7 @@ public class Auctioneer extends Agent {
 		}
 
 		private void processJoin(ACLMessage msg) {
-			ACLMessage response = new ACLMessage(ACLMessage.INFORM);
+			ACLMessage response = new ACLMessage(ACLMessage.ACCEPT_PROPOSAL);
 			if (auction.getFase() == AuctionFase.Open) {
 				if (msg.getPerformative() == ACLMessage.REQUEST) {
 					bidders.add(msg.getSender());

@@ -1,7 +1,11 @@
 package com.sma;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -22,12 +26,15 @@ import jade.lang.acl.ACLMessage;
 public class Bidder extends Agent{
 
 	private static final long serialVersionUID = 1L;
+	private final int itemsWanted = 6;
+	private final int maxPoints = 60;
 
 	private BidderBehavior behavior = new BidderBehavior();
 	private AID auctionner;
 
 	private int money = 0;
 
+	private HashMap<AuctionItem,Integer> priorities = new HashMap<>();
 
 	@Override
 	protected void setup() {
@@ -84,11 +91,33 @@ public class Bidder extends Agent{
 
 
 
+ 
 
-
-	public void chooseItemPriorities(List<AuctionItem> itens) {
-		// TODO Auto-generated method stub
-
+	public void defineItemsPriorities(List<AuctionItem> items) {
+		Random r = new Random();
+		LinkedList<AuctionItem> wanted = new LinkedList<>();
+		while(wanted.size() < itemsWanted && items.size()>0) {
+			AuctionItem item = items.get(r.nextInt(items.size()));
+			wanted.add(item);
+			items.remove(item);
+		}
+		
+		int totalMax = maxPoints;
+		int min = totalMax/wanted.size();
+		int sum = 0;
+		int prio = 0;
+		int max = 0; 
+		for(int i = wanted.size()-1 ; i>=0 ; i--) {
+			if(i != 0) {
+				max = totalMax - (i+1) * 5;
+				prio = r.nextInt(Math.max(min,Math.min(max, 15)- 5)) + 5 ;
+				totalMax -= prio; 
+				min = (int) Math.ceil(totalMax / Math.max(1,i));
+			}else 
+				prio = maxPoints - sum;
+			sum += prio;
+			priorities.put(wanted.get(i), prio);
+		}
 	}
 
 
@@ -162,7 +191,8 @@ public class Bidder extends Agent{
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			Type listType = new TypeToken<List<AuctionItem>>() {}.getType();
 			List<AuctionItem> itens = new Gson().fromJson(json, listType);
-			chooseItemPriorities(itens);
+			defineItemsPriorities(itens);
+			
 		}
 
 
