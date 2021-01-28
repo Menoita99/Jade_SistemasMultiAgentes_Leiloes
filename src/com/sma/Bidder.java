@@ -27,8 +27,8 @@ public class Bidder extends Agent{
 	private AID auctionner;
 
 	private int money = 0;
-	
-	
+
+
 	@Override
 	protected void setup() {
 		try {
@@ -45,7 +45,7 @@ public class Bidder extends Agent{
 
 	private void joinAuction() throws InterruptedException, FIPAException {
 		while(auctionner == null) {
-			
+
 			DFAgentDescription template = new DFAgentDescription();
 			ServiceDescription sd = new ServiceDescription();
 			sd.setType("auctionner");
@@ -56,6 +56,7 @@ public class Bidder extends Agent{
 				newMsg.setContent(MessageType.JOIN.toString()+"\n");
 				newMsg.addReceiver(result[i].getName());
 				send(newMsg);
+				System.out.println("Sending join request to: "+result[i].getName());
 			}
 			if(auctionner == null)
 				Thread.sleep(1000);
@@ -87,14 +88,14 @@ public class Bidder extends Agent{
 
 	public void chooseItemPriorities(List<AuctionItem> itens) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	private class BidderBehavior extends CyclicBehaviour{
 
 		private static final long serialVersionUID = 1L;
@@ -102,35 +103,37 @@ public class Bidder extends Agent{
 		@Override
 		public void action() {
 			ACLMessage msg = myAgent.receive();
-			MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
-			switch (type) {
-			case JOIN: {
-				processJoin(msg);
-				break;
-			}
-			case BIDDING: {
-				processBidding(msg);
-				break;
-			}
-			case START_ROUND: {
-				processStartRound(msg);
-				break;
-			}
-			case WINNER: {
-				processWinner(msg);
-				break;
-			}
-			case OVER: {
-				processOver(msg);
-				break;
-			}
-			default:
-				throw new IllegalArgumentException("Unexpected value: " + type);
+			if(msg != null) {
+				MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
+				switch (type) {
+				case JOIN: {
+					processJoin(msg);
+					break;
+				}
+				case BIDDING: {
+					processBidding(msg);
+					break;
+				}
+				case START_ROUND: {
+					processStartRound(msg);
+					break;
+				}
+				case WINNER: {
+					processWinner(msg);
+					break;
+				}
+				case OVER: {
+					processOver(msg);
+					break;
+				}
+				default:
+					throw new IllegalArgumentException("Unexpected value: " + type);
+				}
 			}
 		}
-		
-		
-		
+
+
+
 		private void processBidding(ACLMessage msg) {
 			// TODO Auto-generated method stub
 		}
@@ -138,6 +141,8 @@ public class Bidder extends Agent{
 
 
 		private void processJoin(ACLMessage msg) {
+			System.out.println("Received Join message from "+msg.getSender());
+			System.out.println(msg.getContent());
 			if(msg.getPerformative() == ACLMessage.ACCEPT_PROPOSAL) {
 				if(auctionner == null)
 					auctionner = msg.getSender();
@@ -164,14 +169,14 @@ public class Bidder extends Agent{
 
 		private void processWinner(ACLMessage msg) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 
 
 		private void processOver(ACLMessage msg) {
 			// TODO Auto-generated method stub
-			
+
 		}
 	}
 
