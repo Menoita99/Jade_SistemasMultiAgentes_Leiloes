@@ -25,8 +25,10 @@ public class Auction {
 	
 	
 	public List<AuctionItem> nextRound(){
-		if((round+1)*numberOfItemsPerRound < items.size())
-			return items.subList(round, (round+1)*numberOfItemsPerRound);
+		if((round+1)*numberOfItemsPerRound < items.size()) {
+			round++;
+			return items.subList((round-1)*numberOfItemsPerRound, (round)*numberOfItemsPerRound);
+		}
 		return null;
 	}
 }

@@ -1,6 +1,11 @@
 package com.sma;
 
 import java.util.LinkedList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+import com.google.gson.Gson;
 
 import jade.core.AID;
 import jade.core.Agent;
@@ -21,7 +26,10 @@ public class Auctioneer extends Agent {
 
 	private static final long serialVersionUID = 1L;
 
-	private Auction auction;
+	private boolean acceptinJoins = true;
+
+	private static Auction auction;
+	private ScheduledExecutorService executer = Executors.newSingleThreadScheduledExecutor();
 	private AuctioneerBehavior behavior = new AuctioneerBehavior();
 	private LinkedList<AID> bidders = new LinkedList<>();
 
@@ -33,13 +41,39 @@ public class Auctioneer extends Agent {
 	protected void setup() {
 		try {
 			regist();
-			searchForBidders();
 			addBehaviour(behavior);
+			startJoinPhase(20);
 
 		} catch (FIPAException e) {
 			e.printStackTrace();
 		}
 	}
+
+	private void startJoinPhase(int time) {
+		executer.schedule(() -> {
+			acceptinJoins = false;
+			startAuction();
+
+		}, time, TimeUnit.SECONDS);
+	}
+
+	private void startAuction() {
+		auction.setFase(AuctionFase.onGoing);
+		sendStartingMessage();
+	}
+
+	private void sendStartingMessage() {
+		ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
+		Gson gson = new Gson();
+		String msgAux = gson.toJson(auction.nextRound());
+		for (AID bidder : bidders) {
+			msg.addReceiver(bidder);
+		}
+		msg.setContent(MessageType.START_ROUND.toString() + "\n" + msgAux);
+		System.out.println("Sent message: " + msg);
+		send(msg);
+	}
+
 
 	private void regist() throws FIPAException {
 
@@ -53,21 +87,6 @@ public class Auctioneer extends Agent {
 		System.out.println("Auctionner " + getName() + " with aid " + getAID() + " ready");
 	}
 
-	protected void searchForBidders() {
-		DFAgentDescription template = new DFAgentDescription();
-		ServiceDescription sd = new ServiceDescription();
-		sd.setType("bidders");
-		template.addServices(sd);
-		try {
-			DFAgentDescription[] result = DFService.search(this, template);
-			bidders.clear();
-			for (int i = 0; i < result.length; ++i)
-				bidders.add(result[i].getName());
-		} catch (FIPAException fe) {
-			fe.printStackTrace();
-		}
-	}
-
 	private class AuctioneerBehavior extends CyclicBehaviour {
 
 		private static final long serialVersionUID = 1L;
@@ -77,44 +96,42 @@ public class Auctioneer extends Agent {
 			ACLMessage msg = myAgent.receive();
 			if (msg != null) {
 				MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
-				switch (type) {
-				case JOIN: {
-					processJoin(msg);
-					break;
-				}
-				case BIDDING: {
-					processBidding(msg);
-					break;
-				}
-				case PRIORITIES: {
-					processPriorities(msg);
-					break;
-				}
-				case WINNER: {
-					// processWinner(msg);
-					break;
-				}
-				default:
-					throw new IllegalArgumentException("Unexpected value: " + type);
+				if (acceptinJoins) {
+					if(type == MessageType.JOIN)
+						processJoin(msg);
+				} else {
+					switch (type) {
+					case BIDDING: {
+						processBidding(msg);
+						break;
+					}
+					case PRIORITIES: {
+						processPriorities(msg);
+						break;
+					}
+					case WINNER: {
+						// processWinner(msg);
+						break;
+					}
+					default:
+						throw new IllegalArgumentException("Unexpected value: " + type);
+					}
 				}
 			}
 		}
 
 		private void processPriorities(ACLMessage msg) {
 			// TODO Auto-generated method stub
-
 		}
 
 		private void processBidding(ACLMessage msg) {
 			// TODO Auto-generated method stub
-
 		}
 
 		private void processJoin(ACLMessage msg) {
 			AID sender = msg.getSender();
 			if (auction.getFase() == AuctionFase.Open) {
-				if (msg.getPerformative() == ACLMessage.REQUEST) {
-
+				if (msg.getPerformative() == ACLMessage.REQUEST && bidders.contains(sender)) {
 					ACLMessage response = new ACLMessage(ACLMessage.ACCEPT_PROPOSAL);
 					response.setContent(MessageType.JOIN.toString() + "\n");
 					response.addReceiver(sender);
@@ -134,4 +151,9 @@ public class Auctioneer extends Agent {
 
 		}
 	}
+	
+	public static void main(String[] args) {
+		//new Auctioneer().getItemsJson();
+	}
+	
 }
