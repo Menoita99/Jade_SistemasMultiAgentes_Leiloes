@@ -229,9 +229,11 @@ public class Bidder extends Agent{
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			Type listType = new TypeToken<List<AuctionItem>>() {}.getType();
 			List<AuctionItem> itens = new Gson().fromJson(json, listType);
+			
 			defineItemsPriorities(itens);
 			List<Pair<AuctionItem,Integer>> prios = new LinkedList<>();
 			priorities.forEach((k,v)->prios.add(new Pair<AuctionItem, Integer>(k, v)));
+			
 			String itemsJson = new Gson().toJson(prios);
 			ACLMessage newMsg = new ACLMessage(ACLMessage.INFORM); 
 			newMsg.setContent(MessageType.PRIORITIES.toString()+"\n"+itemsJson);
