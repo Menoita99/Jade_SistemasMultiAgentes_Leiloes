@@ -151,7 +151,7 @@ public class Bidder extends Agent{
 					processStartRound(msg);
 					break;
 				}
-				case WINNER: {
+				case WINNER: {	
 					processWinner(msg);
 					break;
 				}
@@ -230,7 +230,9 @@ public class Bidder extends Agent{
 			Type listType = new TypeToken<List<AuctionItem>>() {}.getType();
 			List<AuctionItem> itens = new Gson().fromJson(json, listType);
 			defineItemsPriorities(itens);
-			String itemsJson = new Gson().toJson(priorities);
+			List<Pair<AuctionItem,Integer>> prios = new LinkedList<>();
+			priorities.forEach((k,v)->prios.add(new Pair<AuctionItem, Integer>(k, v)));
+			String itemsJson = new Gson().toJson(prios);
 			ACLMessage newMsg = new ACLMessage(ACLMessage.INFORM); 
 			newMsg.setContent(MessageType.PRIORITIES.toString()+"\n"+itemsJson);
 			newMsg.addReceiver(msg.getSender());
