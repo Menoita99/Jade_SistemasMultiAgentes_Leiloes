@@ -153,7 +153,7 @@ public class Auctioneer extends Agent {
 					break;
 				}
 				case WINNER: {
-					// processWinner(msg);
+					processWinner(msg);
 					break;
 				}
 				default:
@@ -162,6 +162,11 @@ public class Auctioneer extends Agent {
 			} else {
 				this.block();
 			}
+		}
+
+		private void processWinner(ACLMessage msg) {
+			// TODO Auto-generated method stub
+			
 		}
 
 		private void processPriorities(ACLMessage msg) {

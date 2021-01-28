@@ -39,7 +39,6 @@ public class Bidder extends Agent{
 	private HashMap<AuctionItem,Integer> priorities = new HashMap<>();
 	private AuctionItem currentItemInAuction;
 	private int currentItemPriority = 0;
-	private int currentBiddingItemIndex = 0;
 
 	@Override
 	protected void setup() {
@@ -125,22 +124,6 @@ public class Bidder extends Agent{
 	
 	
 	
-	public static void main(String[] args) {
-		HashMap<AuctionItem,Integer> priorities = new HashMap<>();
-		priorities.put(new AuctionItem(), 5);
-		List<Pair<AuctionItem,Integer>> l = new LinkedList<>();
-		priorities.forEach((k,v)->l.add(new Pair<AuctionItem, Integer>(k, v)));
-		String json = new Gson().toJson(l);
-		System.out.println(json);
-		System.out.println("+++++++++++++++++++++++++++++++++++++++++++");
-		Type t = new TypeToken<List<Pair<AuctionItem,Integer>>>() {}.getType();
-		List<Pair<AuctionItem,Integer>> i = new Gson().fromJson(json, t);
-		i.forEach(System.out::println);
-		System.out.println("+++++++++++++++++++++++++++++++++++++++++++");
-	}
-
-
-
 	private class BidderBehavior extends CyclicBehaviour{
 
 		private static final long serialVersionUID = 1L;
@@ -218,7 +201,11 @@ public class Bidder extends Agent{
 
 
 		private void processBidding(ACLMessage msg) {
-			// TODO Auto-generated method stub
+			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
+			Type listType = new TypeToken<Pair<AID, Double>>() {}.getType();
+			Pair<AID, Double> item = new Gson().fromJson(json, listType);
+			currentItemInAuction.setPrice(item.getValue());
+			bid();
 		}
 
 
@@ -241,7 +228,6 @@ public class Bidder extends Agent{
 
 		private void processStartRound(ACLMessage msg) {
 			money += 100;
-			currentBiddingItemIndex = 0;
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			Type listType = new TypeToken<List<AuctionItem>>() {}.getType();
 			List<AuctionItem> itens = new Gson().fromJson(json, listType);
@@ -258,16 +244,32 @@ public class Bidder extends Agent{
 		}
 
 
+		
+		
+		
 		private void processWinner(ACLMessage msg) {
-			// TODO Auto-generated method stub
-			currentBiddingItemIndex++;
+			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
+			Type listType = new TypeToken<Pair<AID,AuctionItem>>() {}.getType();
+			Pair<AID,AuctionItem> winner = new Gson().fromJson(json, listType);
+			if(getAID().equals(winner.getKey())) {
+				money -= winner.getValue().getPrice();
+				itemsWon.put(winner.getValue(), priorities.getOrDefault(winner.getValue(), 0));
+				System.out.println("I won!!! "+winner);
+			}
 		}
 
 
 
 		private void processOver(ACLMessage msg) {
-			// TODO Auto-generated method stub
-
+			ACLMessage newMsg = new ACLMessage(ACLMessage.INFORM); 
+			
+			List<Pair<AuctionItem,Integer>> l = new LinkedList<>();
+			itemsWon.forEach((k,v)->l.add(new Pair<AuctionItem, Integer>(k, v)));
+			String itemsJson = new Gson().toJson(l);
+			
+			newMsg.setContent(MessageType.RESULTS.toString()+"\n"+itemsJson);
+			newMsg.addReceiver(msg.getSender());
+			send(newMsg);
 		}
 	}
 }
