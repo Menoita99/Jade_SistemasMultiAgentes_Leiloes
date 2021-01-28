@@ -126,7 +126,6 @@ public class Bidder extends Agent{
 		@Override
 		public void action() {
 			ACLMessage msg = myAgent.receive();
-			System.out.println("Received "+msg);
 			if(msg != null) {
 				MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
 				switch (type) {

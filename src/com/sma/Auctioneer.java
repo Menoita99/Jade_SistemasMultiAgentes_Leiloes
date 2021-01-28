@@ -28,7 +28,7 @@ public class Auctioneer extends Agent {
 
 	private boolean acceptinJoins = true;
 
-	private static Auction auction;
+	private Auction auction;
 	private ScheduledExecutorService executer = Executors.newSingleThreadScheduledExecutor();
 	private AuctioneerBehavior behavior = new AuctioneerBehavior();
 	private LinkedList<AID> bidders = new LinkedList<>();
@@ -41,9 +41,8 @@ public class Auctioneer extends Agent {
 	protected void setup() {
 		try {
 			regist();
-			addBehaviour(behavior);
+			addBehaviour(behavior); 
 			startJoinPhase(20);
-
 		} catch (FIPAException e) {
 			e.printStackTrace();
 		}
@@ -53,7 +52,6 @@ public class Auctioneer extends Agent {
 		executer.schedule(() -> {
 			acceptinJoins = false;
 			startAuction();
-
 		}, time, TimeUnit.SECONDS);
 	}
 
@@ -94,28 +92,26 @@ public class Auctioneer extends Agent {
 		@Override
 		public void action() {
 			ACLMessage msg = myAgent.receive();
-			if (msg != null) {
+			if (msg != null) {	 
 				MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
-				if (acceptinJoins) { 
-					if(type == MessageType.JOIN)
-						processJoin(msg);
-				} else {
-					switch (type) {
-					case BIDDING: {
-						processBidding(msg);
-						break;
-					}
-					case PRIORITIES: {
-						processPriorities(msg);
-						break;
-					}
-					case WINNER: {
-						// processWinner(msg);
-						break;
-					}
-					default:
-						throw new IllegalArgumentException("Unexpected value: " + type);
-					}
+				switch (type) {
+				case JOIN:{
+					processJoin(msg);
+					break;
+				}case BIDDING: {
+					processBidding(msg);
+					break;
+				}
+				case PRIORITIES: {
+					processPriorities(msg);
+					break; 	
+				}
+				case WINNER: {
+					// processWinner(msg);
+					break;
+				}
+				default:
+					throw new IllegalArgumentException("Unexpected value: " + type);
 				}
 			}else {
 				this.block();
@@ -124,7 +120,7 @@ public class Auctioneer extends Agent {
 
 		private void processPriorities(ACLMessage msg) {
 			// TODO Auto-generated method stub
-		}
+		} 	
 
 		private void processBidding(ACLMessage msg) {
 			// TODO Auto-generated method stub
@@ -132,13 +128,12 @@ public class Auctioneer extends Agent {
 
 		private void processJoin(ACLMessage msg) {
 			AID sender = msg.getSender();
-			if (auction.getFase() == AuctionFase.Open) {
-				if (msg.getPerformative() == ACLMessage.REQUEST && bidders.contains(sender)) {
+			if (auction.getFase() == AuctionFase.Open && acceptinJoins) {
+				if (msg.getPerformative() == ACLMessage.REQUEST && !bidders.contains(sender)) {
 					ACLMessage response = new ACLMessage(ACLMessage.ACCEPT_PROPOSAL);
 					response.setContent(MessageType.JOIN.toString() + "\n");
 					response.addReceiver(sender);
 					bidders.add(sender);
-					System.out.println("Accepted: " + sender);
 					send(response);
 				}
 			} else {
@@ -150,12 +145,11 @@ public class Auctioneer extends Agent {
 			if (msg.getPerformative() == ACLMessage.REFUSE) {
 				bidders.remove(sender);
 			}
-
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		//new Auctioneer().getItemsJson();
 	}
-	
+
 }
