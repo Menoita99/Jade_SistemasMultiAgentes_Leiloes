@@ -156,22 +156,32 @@ public class Auctioneer extends Agent {
 			}
 		}
 
+		
+		
+		
+		
 		private void processPriorities(ACLMessage msg) {
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			System.out.println("--------------------------");
 			System.out.println(json);
-			Type listType = new TypeToken<Map<AuctionItem,Integer>>() {}.getType();
-			Map<AuctionItem,Integer> itens = new Gson().fromJson(json, listType);
+			Type listType = new TypeToken<List<Pair<AuctionItem,Integer>>>() {}.getType();
+			List<Pair<AuctionItem,Integer>> itens = new Gson().fromJson(json, listType);
 			System.out.println("Bidder:" + msg.getSender().getLocalName());
-			itens.forEach((key, value)->
-				System.out.println("Key: " + key + "| Priority: " + value)
-			);
+			itens.forEach((pair)-> System.out.println("Key: " + pair.getKey() + "| Priority: " + pair.getValue()));
 		}
 
+		
+		
+		
+		
 		private void processBidding(ACLMessage msg) {
 			biddingTimer.restart(5000);
 		}
 
+		
+		
+		
+		
 		private void processJoin(ACLMessage msg) {
 			AID sender = msg.getSender();
 			if (auction.getFase() == AuctionFase.Open && acceptinJoins) {
