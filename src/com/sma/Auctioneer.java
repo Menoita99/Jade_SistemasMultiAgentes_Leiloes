@@ -1,5 +1,6 @@
 package com.sma;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import jade.core.AID;
 import jade.core.Agent;
@@ -49,7 +51,7 @@ public class Auctioneer extends Agent {
 		try {
 			regist();
 			addBehaviour(behavior);
-			startJoinPhase(20);
+			startJoinPhase(7);
 		} catch (FIPAException e) {
 			e.printStackTrace();
 		}
@@ -57,19 +59,25 @@ public class Auctioneer extends Agent {
 
 	private void startJoinPhase(int time) {
 		executer.schedule(() -> {
+			System.out.println("Joining phase started");
 			acceptinJoins = false;
 			startAuction();
 		}, time, TimeUnit.SECONDS);
 	}
 
 	private void startAuction() {
+		System.out.println("Auction started");
 		auction.setFase(AuctionFase.onGoing);
 		startNewRound();
 	}
 
 	private void startNewRound() {
 		ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
+		try {
 		auctionItems = auction.nextRound();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		Gson gson = new Gson();
 		String msgAux = gson.toJson(auctionItems);
 		for (AID bidder : bidders) {
@@ -150,7 +158,14 @@ public class Auctioneer extends Agent {
 
 		private void processPriorities(ACLMessage msg) {
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
+			System.out.println("--------------------------");
 			System.out.println(json);
+			Type listType = new TypeToken<Map<AuctionItem,Integer>>() {}.getType();
+			Map<AuctionItem,Integer> itens = new Gson().fromJson(json, listType);
+			System.out.println("Bidder:" + msg.getSender().getLocalName());
+			itens.forEach((key, value)->
+				System.out.println("Key: " + key + "| Priority: " + value)
+			);
 		}
 
 		private void processBidding(ACLMessage msg) {
