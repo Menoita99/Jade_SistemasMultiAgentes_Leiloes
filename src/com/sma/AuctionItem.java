@@ -9,7 +9,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class AuctionItem {
 
-	private int price;
+	private double price;
 	private String id;
 
 	private final static String[] objects = "carrots,face wash,balloon,keys,piano,leg warmers,key chain,milk,sharpie,toothpaste,tv,nail clippers,white out,button,bananas,sandal,ice cube tray,seat belt,puddle,playing card,teddies,conditioner,shoe lace,USB drive,shovel,door,coasters,clothes,thermometer,clamp,pool stick,outlet,cinder block,sun glasses,magnet,eraser,lace,street lights,paint brush,CD,packing peanuts,tomato,bookmark,sponge,doll,ipod,scotch tape,canvas,mouse pad,video games".split(",");

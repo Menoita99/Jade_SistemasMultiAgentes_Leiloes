@@ -1,6 +1,8 @@
 package com.sma;
 
 import java.lang.reflect.Type;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -33,7 +35,11 @@ public class Bidder extends Agent{
 
 	private int money = 0;
 
+	private HashMap<AuctionItem,Integer> itemsWon = new HashMap<>();
 	private HashMap<AuctionItem,Integer> priorities = new HashMap<>();
+	private AuctionItem currentItemInAuction;
+	private int currentItemPriority = 0;
+	private int currentBiddingItemIndex = 0;
 
 	@Override
 	protected void setup() {
@@ -136,6 +142,10 @@ public class Bidder extends Agent{
 				case BIDDING: {
 					processBidding(msg);
 					break;
+				}				
+				case START_BIDDING: {
+					processStartBidding(msg);
+					break;
 				}
 				case START_ROUND: {
 					processStartRound(msg);
@@ -155,6 +165,38 @@ public class Bidder extends Agent{
 			}else {
 				this.block();
 			}
+		}
+
+
+
+		private void processStartBidding(ACLMessage msg) {
+			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
+			currentItemInAuction = new Gson().fromJson(json,AuctionItem.class);
+			currentItemPriority = priorities.getOrDefault(currentItemInAuction, 0);
+			bid();
+		}
+
+
+
+		private void bid() {
+			Random r = new Random();
+			double price = currentItemInAuction.getPrice();
+			int priceProb = -5 * (money/20);
+			int prioProb = 10 + currentItemPriority * 5;
+			int bidProb = prioProb + priceProb;
+			
+			if(price >= money || r.nextInt(100) >= bidProb)
+				return;
+			
+			double complement = Math.max((money - price) * r.nextDouble()*0.4 ,0.01);
+			complement = new BigDecimal(complement).setScale(2, RoundingMode.HALF_UP).doubleValue();
+			
+			double offer = price + complement ;
+			
+			ACLMessage newMsg = new ACLMessage(ACLMessage.REQUEST); 
+			newMsg.setContent(MessageType.BIDDING.toString()+"\n"+new Gson().toJson(offer));
+			newMsg.addReceiver(auctionner);
+			send(newMsg);
 		}
 
 
@@ -183,17 +225,23 @@ public class Bidder extends Agent{
 
 		private void processStartRound(ACLMessage msg) {
 			money += 100;
+			currentBiddingItemIndex = 0;
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			Type listType = new TypeToken<List<AuctionItem>>() {}.getType();
 			List<AuctionItem> itens = new Gson().fromJson(json, listType);
 			defineItemsPriorities(itens);
+			String itemsJson = new Gson().toJson(priorities);
+			ACLMessage newMsg = new ACLMessage(ACLMessage.INFORM); 
+			newMsg.setContent(MessageType.PRIORITIES.toString()+"\n"+itemsJson);
+			newMsg.addReceiver(msg.getSender());
+			send(newMsg);
 		}
 
 
 
 		private void processWinner(ACLMessage msg) {
 			// TODO Auto-generated method stub
-
+			currentBiddingItemIndex++;
 		}
 
 
@@ -203,5 +251,4 @@ public class Bidder extends Agent{
 
 		}
 	}
-
 }
