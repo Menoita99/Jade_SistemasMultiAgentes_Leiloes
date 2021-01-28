@@ -106,7 +106,7 @@ public class Auctioneer extends Agent {
 					processPriorities(msg);
 					break; 	
 				}
-				case WINNER: {
+				case WINNER: { 	
 					// processWinner(msg);
 					break;
 				}

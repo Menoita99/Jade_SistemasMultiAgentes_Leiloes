@@ -167,7 +167,6 @@ public class Bidder extends Agent{
 
 		private void processJoin(ACLMessage msg) {
 			System.out.println("Received Join message from "+msg.getSender());
-			System.out.println(msg.getContent());
 			if(msg.getPerformative() == ACLMessage.ACCEPT_PROPOSAL) {
 				if(auctionner == null)
 					auctionner = msg.getSender();
@@ -188,7 +187,6 @@ public class Bidder extends Agent{
 			Type listType = new TypeToken<List<AuctionItem>>() {}.getType();
 			List<AuctionItem> itens = new Gson().fromJson(json, listType);
 			defineItemsPriorities(itens);
-
 		}
 
 
