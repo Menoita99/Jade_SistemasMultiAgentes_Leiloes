@@ -122,6 +122,22 @@ public class Bidder extends Agent{
 
 
 
+	
+	
+	
+	public static void main(String[] args) {
+		HashMap<AuctionItem,Integer> priorities = new HashMap<>();
+		priorities.put(new AuctionItem(), 5);
+		List<Pair<AuctionItem,Integer>> l = new LinkedList<>();
+		priorities.forEach((k,v)->l.add(new Pair<AuctionItem, Integer>(k, v)));
+		String json = new Gson().toJson(l);
+		System.out.println(json);
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++");
+		Type t = new TypeToken<List<Pair<AuctionItem,Integer>>>() {}.getType();
+		List<Pair<AuctionItem,Integer>> i = new Gson().fromJson(json, t);
+		i.forEach(System.out::println);
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++");
+	}
 
 
 
@@ -230,13 +246,16 @@ public class Bidder extends Agent{
 			Type listType = new TypeToken<List<AuctionItem>>() {}.getType();
 			List<AuctionItem> itens = new Gson().fromJson(json, listType);
 			defineItemsPriorities(itens);
-			String itemsJson = new Gson().toJson(priorities);
+			
+			List<Pair<AuctionItem,Integer>> l = new LinkedList<>();
+			priorities.forEach((k,v)->l.add(new Pair<AuctionItem, Integer>(k, v)));
+			String itemsJson = new Gson().toJson(l);
+			
 			ACLMessage newMsg = new ACLMessage(ACLMessage.INFORM); 
 			newMsg.setContent(MessageType.PRIORITIES.toString()+"\n"+itemsJson);
 			newMsg.addReceiver(msg.getSender());
 			send(newMsg);
 		}
-
 
 
 		private void processWinner(ACLMessage msg) {
