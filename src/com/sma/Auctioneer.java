@@ -40,7 +40,8 @@ public class Auctioneer extends Agent {
 	private LinkedList<AuctionItem> auctionItems;
 	private Map<AID, String> priorities = new HashMap<AID, String>();
 	private OneSchedualTimer biddingTimer;
-	
+
+	private Pair<AID, Double> highestOffer = null;
 
 	public Auctioneer() {
 		auction = new Auction();
@@ -51,7 +52,7 @@ public class Auctioneer extends Agent {
 		try {
 			regist();
 			addBehaviour(behavior);
-			startJoinPhase(9);
+			startJoinPhase(15);
 		} catch (FIPAException e) {
 			e.printStackTrace();
 		}
@@ -74,7 +75,7 @@ public class Auctioneer extends Agent {
 	private void startNewRound() {
 		ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
 		try {
-		auctionItems = auction.nextRound();
+			auctionItems = auction.nextRound();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -101,20 +102,24 @@ public class Auctioneer extends Agent {
 			for (AID bidder : bidders)
 				biddingMessage.addReceiver(bidder);
 			send(biddingMessage);
-			biddingTimer = new OneSchedualTimer(()-> {
+			biddingTimer = new OneSchedualTimer(() -> {
 				biddingPhase();
-				//TODO: Send winner
-			}, 5000); 
+				announceWinner();
+			}, 5000);
 		} else {
 			startNewRound();
 		}
 	}
-	
-	
-	
-	
+
+	private void announceWinner() {
+		ACLMessage winnerMessage = new ACLMessage(ACLMessage.INFORM);
+		String jsonHighestOffer = new Gson().toJson(highestOffer, Pair.class);
+		winnerMessage.setContent(MessageType.WINNER.toString() + "\n" + jsonHighestOffer);
+		sendMessageToAllBiders(winnerMessage);
+	}
 
 	private void regist() throws FIPAException {
+
 		DFAgentDescription dfd = new DFAgentDescription();
 		ServiceDescription sd = new ServiceDescription();
 		dfd.setName(getAID());
@@ -125,10 +130,6 @@ public class Auctioneer extends Agent {
 		System.out.println("Auctionner " + getName() + " with aid " + getAID() + " ready");
 	}
 
-	
-	
-	
-	
 	private class AuctioneerBehavior extends CyclicBehaviour {
 
 		private static final long serialVersionUID = 1L;
@@ -163,31 +164,41 @@ public class Auctioneer extends Agent {
 			}
 		}
 
-		
-		
-		
-		
 		private void processPriorities(ACLMessage msg) {
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			System.out.println("--------------------------");
 			System.out.println(json);
-			Type listType = new TypeToken<List<Pair<AuctionItem,Integer>>>() {}.getType();
-			List<Pair<AuctionItem,Integer>> itens = new Gson().fromJson(json, listType);
+			Type listType = new TypeToken<List<Pair<AuctionItem, Integer>>>() {
+			}.getType();
+			List<Pair<AuctionItem, Integer>> itens = new Gson().fromJson(json, listType);
 			System.out.println("Bidder:" + msg.getSender().getLocalName());
-			itens.forEach((pair)-> System.out.println("Key: " + pair.getKey() + "| Priority: " + pair.getValue()));
+			itens.forEach((pair) -> System.out.println("Key: " + pair.getKey() + "| Priority: " + pair.getValue()));
 		}
 
-		
-		
-		
 		private void processBidding(ACLMessage msg) {
 			biddingTimer.restart(5000);
+			double offer = Double.parseDouble(msg.getContent().split("\n")[1]);
+			ACLMessage biddingResult = new ACLMessage(ACLMessage.INFORM);
+			if (highestOffer == null) {
+				highestOffer = new Pair<AID, Double>(msg.getSender(), offer);
+				String jsonHighestOffer = new Gson().toJson(highestOffer, Pair.class);
+				biddingResult.setContent(MessageType.BIDDING.toString() + "\n" + jsonHighestOffer);
+				sendMessageToAllBiders(biddingResult);
+			}
+			if (offer > highestOffer.getValue()) {
+				highestOffer = new Pair<AID, Double>(msg.getSender(), offer);
+				String jsonHighestOffer = new Gson().toJson(highestOffer, Pair.class);
+				biddingResult.setContent(MessageType.BIDDING.toString() + "\n" + jsonHighestOffer);
+				sendMessageToAllBiders(biddingResult);
+			} else {
+				ACLMessage biddingRefused = new ACLMessage(ACLMessage.REFUSE);
+				String jsonHighestOffer = new Gson().toJson(highestOffer, Pair.class);
+				biddingResult.setContent(MessageType.BIDDING.toString() + "\n" + jsonHighestOffer);
+				biddingRefused.addReceiver(msg.getSender());
+				send(biddingRefused);
+			}
 		}
 
-		
-		
-		
-		
 		private void processJoin(ACLMessage msg) {
 			AID sender = msg.getSender();
 			if (auction.getFase() == AuctionFase.Open && acceptinJoins) {
@@ -210,9 +221,13 @@ public class Auctioneer extends Agent {
 		}
 	}
 
-	
-	
-	
+	private void sendMessageToAllBiders(ACLMessage msg) {
+		for (AID bidder : bidders) {
+			msg.addReceiver(bidder);
+		}
+		send(msg);
+	}
+
 	public static void main(String[] args) {
 		// new Auctioneer().getItemsJson();
 	}
