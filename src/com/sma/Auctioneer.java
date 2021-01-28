@@ -111,17 +111,27 @@ public class Auctioneer extends Agent {
 		}
 
 		private void processJoin(ACLMessage msg) {
-			ACLMessage response = new ACLMessage(ACLMessage.INFORM);
+			AID sender = msg.getSender();
 			if (auction.getFase() == AuctionFase.Open) {
 				if (msg.getPerformative() == ACLMessage.REQUEST) {
-					bidders.add(msg.getSender());
+
+					ACLMessage response = new ACLMessage(ACLMessage.ACCEPT_PROPOSAL);
 					response.setContent(MessageType.JOIN.toString() + "\n");
-					response.addReceiver(msg.getSender());
-					System.out.println("Auctioneer sent ACCEPT to :" + msg.getSender());
+					response.addReceiver(sender);
+					bidders.add(sender);
+					System.out.println("Accepted: " + sender);
+					send(response);
 				}
-			} else if (msg.getPerformative() == ACLMessage.REFUSE) {
-				bidders.remove(msg.getSender());
+			} else {
+				ACLMessage response = new ACLMessage(ACLMessage.REFUSE);
+				response.setContent(MessageType.JOIN.toString() + "\n");
+				response.addReceiver(sender);
+				send(response);
 			}
+			if (msg.getPerformative() == ACLMessage.REFUSE) {
+				bidders.remove(sender);
+			}
+
 		}
 	}
 }
