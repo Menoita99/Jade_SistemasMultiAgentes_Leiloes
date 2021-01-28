@@ -1,6 +1,9 @@
 package com.sma;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -32,6 +35,8 @@ public class Auctioneer extends Agent {
 	private ScheduledExecutorService executer = Executors.newSingleThreadScheduledExecutor();
 	private AuctioneerBehavior behavior = new AuctioneerBehavior();
 	private LinkedList<AID> bidders = new LinkedList<>();
+	private List<AuctionItem> auctionItems;
+	private Map<AID, String> priorities = new HashMap<AID, String>();
 
 	public Auctioneer() {
 		auction = new Auction();
@@ -62,16 +67,26 @@ public class Auctioneer extends Agent {
 
 	private void sendStartingMessage() {
 		ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
+		auctionItems = auction.nextRound();
 		Gson gson = new Gson();
-		String msgAux = gson.toJson(auction.nextRound());
+		String msgAux = gson.toJson(auctionItems);
 		for (AID bidder : bidders) {
 			msg.addReceiver(bidder);
 		}
 		msg.setContent(MessageType.START_ROUND.toString() + "\n" + msgAux);
 		System.out.println("Sent message: " + msg);
 		send(msg);
+		
+		executer.schedule(() -> {
+			startBiddingPhase();
+		}, 10, TimeUnit.SECONDS);
+		
 	}
 
+
+	private void startBiddingPhase() {
+		
+	}
 
 	private void regist() throws FIPAException {
 
@@ -117,13 +132,15 @@ public class Auctioneer extends Agent {
 				this.block();
 			} 
 		}
-
+		
 		private void processPriorities(ACLMessage msg) {
-			// TODO Auto-generated method stub
+			String prioritiesMsg = msg.getContent().split("\n")[1];
+			priorities.put(msg.getSender(), prioritiesMsg);
+			System.out.println(prioritiesMsg);
 		} 	
 
 		private void processBidding(ACLMessage msg) {
-			// TODO Auto-generated method stub
+			
 		}
 
 		private void processJoin(ACLMessage msg) {
