@@ -7,5 +7,5 @@ public enum MessageType {
 	BIDDING,
 	WINNER,
 	OVER,
-	RESULTS;
+	RESULTS; 
 }

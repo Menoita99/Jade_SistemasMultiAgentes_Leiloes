@@ -17,6 +17,6 @@ public class AuctionItem {
 
 	public AuctionItem() {
 		price = (int) (Math.random() * 50);
-		id = objects[new Random().nextInt(objects.length)] + adjectives[new Random().nextInt(adjectives.length)];
+		id =adjectives[new Random().nextInt(adjectives.length)] +" "+ objects[new Random().nextInt(objects.length)] ;
 	}
 }

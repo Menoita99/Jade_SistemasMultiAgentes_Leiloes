@@ -96,7 +96,7 @@ public class Auctioneer extends Agent {
 			ACLMessage msg = myAgent.receive();
 			if (msg != null) {
 				MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
-				if (acceptinJoins) {
+				if (acceptinJoins) { 
 					if(type == MessageType.JOIN)
 						processJoin(msg);
 				} else {
@@ -117,7 +117,9 @@ public class Auctioneer extends Agent {
 						throw new IllegalArgumentException("Unexpected value: " + type);
 					}
 				}
-			}
+			}else {
+				this.block();
+			} 
 		}
 
 		private void processPriorities(ACLMessage msg) {

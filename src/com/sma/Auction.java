@@ -15,8 +15,7 @@ public class Auction {
 	private int round = 0;
 	private AuctionFase fase = AuctionFase.Open;
 	private LinkedList<AuctionItem> items = new LinkedList<>();
-
-	
+ 	
 	
 	
 	public Auction() {

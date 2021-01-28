@@ -50,22 +50,17 @@ public class Bidder extends Agent{
 
 
 	private void joinAuction() throws InterruptedException, FIPAException {
-		while(auctionner == null) {
-
-			DFAgentDescription template = new DFAgentDescription();
-			ServiceDescription sd = new ServiceDescription();
-			sd.setType("auctionner");
-			template.addServices(sd);
-			DFAgentDescription[] result = DFService.search(this, template);
-			for (int i = 0; i < result.length; i++) {
-				ACLMessage newMsg = new ACLMessage(ACLMessage.REQUEST); 
-				newMsg.setContent(MessageType.JOIN.toString()+"\n");
-				newMsg.addReceiver(result[i].getName());
-				send(newMsg);
-				System.out.println("Sending join request to: "+result[i].getName());
-			}
-			if(auctionner == null)
-				Thread.sleep(1000);
+		DFAgentDescription template = new DFAgentDescription();
+		ServiceDescription sd = new ServiceDescription();
+		sd.setType("auctionner");
+		template.addServices(sd);
+		DFAgentDescription[] result = DFService.search(this, template);
+		for (int i = 0; i < result.length; i++) {
+			ACLMessage newMsg = new ACLMessage(ACLMessage.REQUEST); 
+			newMsg.setContent(MessageType.JOIN.toString()+"\n");
+			newMsg.addReceiver(result[i].getName());
+			send(newMsg);
+			System.out.println("Sending join request to: "+result[i].getName());
 		}
 	}
 
@@ -90,7 +85,7 @@ public class Bidder extends Agent{
 
 
 
- 
+
 
 	public void defineItemsPriorities(List<AuctionItem> items) {
 		Random r = new Random();
@@ -100,7 +95,7 @@ public class Bidder extends Agent{
 			wanted.add(item);
 			items.remove(item);
 		}
-		
+
 		int totalMax = maxPoints;
 		int min = totalMax/wanted.size();
 		int sum = 0;
@@ -158,6 +153,8 @@ public class Bidder extends Agent{
 				default:
 					throw new IllegalArgumentException("Unexpected value: " + type);
 				}
+			}else {
+				this.block();
 			}
 		}
 
@@ -192,7 +189,7 @@ public class Bidder extends Agent{
 			Type listType = new TypeToken<List<AuctionItem>>() {}.getType();
 			List<AuctionItem> itens = new Gson().fromJson(json, listType);
 			defineItemsPriorities(itens);
-			
+
 		}
 
 
