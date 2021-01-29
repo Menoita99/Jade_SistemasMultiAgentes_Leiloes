@@ -132,6 +132,9 @@ public class Bidder extends Agent{
 		public void action() {
 			ACLMessage msg = myAgent.receive();
 			if(msg != null) {
+				System.out.println("====================================================");
+				System.out.println(msg);
+				System.out.println("====================================================");
 				MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
 				switch (type) {
 				case JOIN: {
@@ -169,7 +172,6 @@ public class Bidder extends Agent{
 
 
 		private void processStartBidding(ACLMessage msg) {
-			System.out.println();
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			currentItemInAuction = new Gson().fromJson(json,AuctionItem.class);
 			currentItemPriority = priorities.getOrDefault(currentItemInAuction, 0);
@@ -197,18 +199,23 @@ public class Bidder extends Agent{
 			ACLMessage newMsg = new ACLMessage(ACLMessage.REQUEST); 
 			newMsg.setContent(MessageType.BIDDING.toString()+"\n"+new Gson().toJson(offer));
 			newMsg.addReceiver(auctionner);
-			System.out.println("Bid: "+newMsg);
+			System.out.println("Biddng on item: " + currentItemInAuction + " for: " + offer);
 			send(newMsg);
 		}
 
 
 
+		@SuppressWarnings("unchecked")
 		private void processBidding(ACLMessage msg) {
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
-			Type listType = new TypeToken<Pair<AID, Double>>() {}.getType();
-			Pair<AID, Double> item = new Gson().fromJson(json, listType);
+			Pair<AID, Double> item = new Gson().fromJson(json, Pair.class);
+			System.out.println("=================================");
+			System.out.println("PAIR" + item);
+			System.out.println("AID:" + getAID());
+			System.out.println("Winner AID: " + item.getKey());
+			System.out.println(!getAID().getName().equals(item.getKey().getName()));
 			currentItemInAuction.setPrice(item.getValue());
-			if(!getAID().equals(item.getKey()))
+			if(!getAID().getName().equals(item.getKey().getName()) || msg.getPerformative() == ACLMessage.REFUSE)
 				bid();
 		}
 
