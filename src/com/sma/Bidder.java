@@ -272,9 +272,11 @@ public class Bidder extends Agent{
 		private void processOver(ACLMessage msg) {
 			ACLMessage newMsg = new ACLMessage(ACLMessage.INFORM); 
 			
-			List<Pair<AuctionItem,Integer>> l = new LinkedList<>();
-			itemsWon.forEach((k,v)->l.add(new Pair<AuctionItem, Integer>(k, v)));
-			String itemsJson = new Gson().toJson(l);
+			int sum = 0;
+			for(AuctionItem ai : itemsWon.keySet())
+				sum += itemsWon.get(ai);
+			
+			String itemsJson = new Gson().toJson(new double[] {sum,money});
 			
 			newMsg.setContent(MessageType.RESULTS.toString()+"\n"+itemsJson);
 			newMsg.addReceiver(msg.getSender());
