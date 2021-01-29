@@ -40,6 +40,7 @@ public class Bidder extends Agent{
 	private AuctionItem currentItemInAuction;
 	private int currentItemPriority = 0;
 
+	
 	@Override
 	protected void setup() {
 		try {
@@ -171,6 +172,8 @@ public class Bidder extends Agent{
 
 
 
+		
+		
 		private void processStartBidding(ACLMessage msg) {
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			currentItemInAuction = new Gson().fromJson(json,AuctionItem.class);
@@ -178,16 +181,18 @@ public class Bidder extends Agent{
 			bid();
 		}
 
+		
+		
 
 
 		private void bid() {
-			System.out.println("Running bid");
 			Random r = new Random();
 			double price = currentItemInAuction.getPrice();
 			int priceProb =  (5 - (int)((money - price)/20));
 			int prioProb = 10 + currentItemPriority * 5;
 			int bidProb = prioProb + priceProb;
 			
+			System.out.println("Biding prob: "+bidProb);
 			if(price >= money || r.nextInt(100) < bidProb)
 				return;
 			
