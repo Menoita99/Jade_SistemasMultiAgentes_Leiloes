@@ -39,6 +39,8 @@ public class Auctioneer extends Agent {
 	private OneSchedualTimer biddingTimer;
 
 	private Pair<String, Double> highestOffer = null;
+	private Pair<String, Double> resultWinner = null;
+	private double tieBreakerMoney = 0.0;
 
 	public Auctioneer() {
 		auction = new Auction();
@@ -71,6 +73,10 @@ public class Auctioneer extends Agent {
 		ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
 		try {
 			auctionItems = auction.nextRound();
+			if (auctionItems.isEmpty()) {
+				auctionFinished();
+				return;
+			}
 			System.out.println("AUCTIONEER| Starting round " + auction.getRound());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -113,11 +119,23 @@ public class Auctioneer extends Agent {
 	private void announceWinner(AuctionItem item) {
 		ACLMessage winnerMessage = new ACLMessage(ACLMessage.INFORM);
 		item.setPrice(highestOffer.getValue());
-		String jsonHighestOffer = new Gson().toJson(new Pair<String, AuctionItem>(highestOffer.getKey(), item), Pair.class);
+		String jsonHighestOffer = new Gson().toJson(new Pair<String, AuctionItem>(highestOffer.getKey(), item),
+				Pair.class);
 		winnerMessage.setContent(MessageType.WINNER.toString() + "\n" + jsonHighestOffer);
 		System.out.println("AUCTIONEER| Item: " + item.getId() + ", winner is: "
-		+ (highestOffer.getKey().equals("no biddings yet") ? "Nobody" : highestOffer.getKey())); 
+				+ (highestOffer.getKey().equals("no biddings yet") ? "Nobody" : highestOffer.getKey()));
 		sendMessageToAllBiders(winnerMessage);
+	}
+
+	private void auctionFinished() {
+		ACLMessage finished = new ACLMessage(ACLMessage.INFORM);
+		finished.setContent(MessageType.OVER.toString() + "\n");
+		sendMessageToAllBiders(finished);
+		
+		executer.schedule(() -> {
+			System.out.println("AUCTIONEER| : And the winner is... " + resultWinner.getKey() + ", with a total score of: " + resultWinner.getValue() + ".");
+		}, 10, TimeUnit.SECONDS);
+		
 	}
 
 	private void regist() throws FIPAException {
@@ -153,8 +171,8 @@ public class Auctioneer extends Agent {
 					processPriorities(msg);
 					break;
 				}
-				case WINNER: {
-					processWinner(msg);
+				case RESULTS: {
+					processResults(msg);
 					break;
 				}
 				default:
@@ -165,9 +183,18 @@ public class Auctioneer extends Agent {
 			}
 		}
 
-		private void processWinner(ACLMessage msg) {
-			// TODO Auto-generated method stub
-			
+		private void processResults(ACLMessage msg) {
+			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
+			double [] results = new Gson().fromJson(json, double[].class);
+			double resultPoints = results[0];
+			double moneyLeft = results[1];
+			if (resultWinner == null || resultPoints > resultWinner.getValue() ) {
+				resultWinner = new Pair<String, Double>(msg.getSender().getLocalName(), resultPoints);
+				tieBreakerMoney = moneyLeft;
+			} else if (resultPoints == resultWinner.getValue() && moneyLeft > tieBreakerMoney) {
+				resultWinner = new Pair<String, Double>(msg.getSender().getLocalName(), resultPoints);
+				tieBreakerMoney = moneyLeft;
+			}
 		}
 
 		private void processPriorities(ACLMessage msg) {
@@ -184,27 +211,31 @@ public class Auctioneer extends Agent {
 			biddingTimer.restart(5000);
 			double offer = Double.parseDouble(msg.getContent().split("\n")[1]);
 			System.out.println("AUCTIONEER| Bidding msg received: " + msg.getSender().getLocalName() + "of: " + offer);
-			System.out.println("AUCTIONEER| Actual highest offer: " + highestOffer.getValue() + " from: " + highestOffer.getKey());
+			System.out.println(
+					"AUCTIONEER| Actual highest offer: " + highestOffer.getValue() + " from: " + highestOffer.getKey());
 			ACLMessage biddingResult = new ACLMessage(ACLMessage.INFORM);
 			if (highestOffer == null) {
-				highestOffer = new Pair<String, Double>(msg.getSender().getLocalName(), offer);
+				highestOffer = new Pair<String, Double>(msg.getSender().getName(), offer);
 				String jsonHighestOffer = new Gson().toJson(highestOffer);
 				biddingResult.setContent(MessageType.BIDDING.toString() + "\n" + jsonHighestOffer);
-				System.out.println("AUCTIONEER| New highest offer: " + highestOffer.getValue() + " from: " + highestOffer.getKey());
+				System.out.println("AUCTIONEER| New highest offer: " + highestOffer.getValue() + " from: "
+						+ highestOffer.getKey());
 				sendMessageToAllBiders(biddingResult);
 			}
 			if (offer > highestOffer.getValue()) {
-				highestOffer = new Pair<String, Double>(msg.getSender().getLocalName(), offer);
+				highestOffer = new Pair<String, Double>(msg.getSender().getName(), offer);
 				String jsonHighestOffer = new Gson().toJson(highestOffer);
 				biddingResult.setContent(MessageType.BIDDING.toString() + "\n" + jsonHighestOffer);
-				System.out.println("AUCTIONEER| New highest offer: " + highestOffer.getValue() + " from: " + highestOffer.getKey());
+				System.out.println("AUCTIONEER| New highest offer: " + highestOffer.getValue() + " from: "
+						+ highestOffer.getKey());
 				sendMessageToAllBiders(biddingResult);
 			} else {
 				ACLMessage biddingRefused = new ACLMessage(ACLMessage.REFUSE);
 				String jsonHighestOffer = new Gson().toJson(highestOffer);
 				biddingRefused.setContent(MessageType.BIDDING.toString() + "\n" + jsonHighestOffer);
 				biddingRefused.addReceiver(msg.getSender());
-				System.out.println("AUCTIONEER| Refused offer, current highest: " + highestOffer.getValue() + " from: " + highestOffer.getKey());
+				System.out.println("AUCTIONEER| Refused offer, current highest: " + highestOffer.getValue() + " from: "
+						+ highestOffer.getKey());
 				send(biddingRefused);
 			}
 		}

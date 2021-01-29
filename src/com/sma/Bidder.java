@@ -171,6 +171,7 @@ public class Bidder extends Agent{
 		
 		
 		private void processStartBidding(ACLMessage msg) {
+			System.out.println("BIDDER " + getAID().getLocalName() + " | Current money: " + money);
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			currentItemInAuction = new Gson().fromJson(json,AuctionItem.class);
 			currentItemPriority = priorities.getOrDefault(currentItemInAuction, 0);
@@ -188,24 +189,20 @@ public class Bidder extends Agent{
 			int prioProb = 10 + currentItemPriority * 5;
 			int bidProb = prioProb + priceProb;
 			
-			System.out.println("BIDDER " + getAID().getLocalName() + " | Actual money: " + money);
-			
 			int nextInt = r.nextInt(100);
 			if(price >= money || nextInt >= bidProb) {
 				System.out.println("BIDDER " + getAID().getLocalName() + " | I'm not going to bid " + bidProb);
 				return;
 			}
 			
-			
 			double complement = Math.max(Math.min((money - price),10) * r.nextDouble() ,0.01);
-			complement = new BigDecimal(complement).setScale(2, RoundingMode.HALF_UP).doubleValue();
-			
 			double offer = price + complement ;
+			offer = new BigDecimal(offer).setScale(2, RoundingMode.HALF_UP).doubleValue();
 			
 			ACLMessage newMsg = new ACLMessage(ACLMessage.REQUEST); 
 			newMsg.setContent(MessageType.BIDDING.toString()+"\n"+new Gson().toJson(offer));
 			newMsg.addReceiver(auctionner);
-			System.out.println("BIDDER " + getAID().getLocalName() + " | Bidding on" + currentItemInAuction.getId() + " for: " + offer);
+			System.out.println("BIDDER " + getAID().getLocalName() + " | Bidding on " + currentItemInAuction.getId() + " for: " + offer);
 			send(newMsg);
 		}
 
@@ -266,7 +263,6 @@ public class Bidder extends Agent{
 			if(winner != null && getAID().getName().equals(winner.getKey())) {
 				money = money - winner.getValue().getPrice();
 				money = new BigDecimal(money).setScale(2, RoundingMode.HALF_UP).doubleValue();
-				System.out.println("BIDDER " + getAID().getLocalName() + "| I have " + money + " euros left. :(");
 				itemsWon.put(winner.getValue(), priorities.getOrDefault(winner.getValue(), 0));
 			}
 		}
