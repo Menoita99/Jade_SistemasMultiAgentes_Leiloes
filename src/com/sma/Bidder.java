@@ -210,17 +210,17 @@ public class Bidder extends Agent{
 
 
 
-		@SuppressWarnings("unchecked")
 		private void processBidding(ACLMessage msg) {
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
-			Pair<AID, Double> item = new Gson().fromJson(json, Pair.class);
+			Type type = new TypeToken<Pair<String, Double>>() {}.getType();
+			Pair<String, Double> item = new Gson().fromJson(json, type);
 			System.out.println("=================================");
 			System.out.println("PAIR" + item);
-			System.out.println("AID:" + getAID());
+			System.out.println("AID:" + getAID().getName());
 			System.out.println("Winner AID: " + item.getKey());
-			System.out.println(!getAID().getName().equals(item.getKey().getName()));
+			System.out.println(!getAID().getName().equals(item.getKey()));
 			currentItemInAuction.setPrice(item.getValue());
-			if(!getAID().getName().equals(item.getKey().getName()) || msg.getPerformative() == ACLMessage.REFUSE)
+			if(!getAID().getName().equals(item.getKey()) || msg.getPerformative() == ACLMessage.REFUSE)
 				bid();
 		}
 
