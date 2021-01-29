@@ -51,7 +51,7 @@ public class Auctioneer extends Agent {
 		try {
 			regist();
 			addBehaviour(behavior);
-			startJoinPhase(25);
+			startJoinPhase(10);
 		} catch (FIPAException e) {
 			e.printStackTrace();
 		}
@@ -99,7 +99,7 @@ public class Auctioneer extends Agent {
 		System.out.println("========================================================================");
 		if (!auctionItems.isEmpty()) {
 			AuctionItem item = auctionItems.pop();
-			System.out.println("AUCTIONEER| Round " + auction.getRound() + ",auctioning item: " + item.getId());
+			System.out.println("AUCTIONEER| Round " + auction.getRound() + ",auctioning item: " + item.getId() + ": " + item.getPrice());
 			highestOffer = new Pair<String, Double>("no biddings yet", item.getPrice());
 			Gson gson = new Gson();
 			ACLMessage biddingMessage = new ACLMessage(ACLMessage.INFORM);
@@ -134,7 +134,8 @@ public class Auctioneer extends Agent {
 		
 		executer.schedule(() -> {
 			System.out.println("AUCTIONEER| : And the winner is... " + resultWinner.getKey() + ", with a total score of: " + resultWinner.getValue() + ".");
-		}, 10, TimeUnit.SECONDS);
+			behavior.finish();
+		}, 2, TimeUnit.SECONDS);
 		
 	}
 
@@ -149,6 +150,7 @@ public class Auctioneer extends Agent {
 		DFService.register(this, dfd);
 	}
 
+	
 	private class AuctioneerBehavior extends CyclicBehaviour {
 
 		private static final long serialVersionUID = 1L;
@@ -210,7 +212,7 @@ public class Auctioneer extends Agent {
 		private void processBidding(ACLMessage msg) {
 			biddingTimer.restart(5000);
 			double offer = Double.parseDouble(msg.getContent().split("\n")[1]);
-			System.out.println("AUCTIONEER| Bidding msg received: " + msg.getSender().getLocalName() + "of: " + offer);
+			System.out.println("AUCTIONEER| Bidding msg received: " + msg.getSender().getLocalName() + " of: " + offer);
 			System.out.println(
 					"AUCTIONEER| Actual highest offer: " + highestOffer.getValue() + " from: " + highestOffer.getKey());
 			ACLMessage biddingResult = new ACLMessage(ACLMessage.INFORM);
@@ -260,6 +262,14 @@ public class Auctioneer extends Agent {
 				bidders.remove(sender);
 			}
 		}
+		
+		
+		public void finish() {
+			done();
+			takeDown();
+			myAgent.doDelete();
+		}
+		
 	}
 
 	private void sendMessageToAllBiders(ACLMessage msg) {
@@ -269,6 +279,8 @@ public class Auctioneer extends Agent {
 		send(msg);
 	}
 
+	
+	
 	public static void main(String[] args) {
 		// new Auctioneer().getItemsJson();
 	}

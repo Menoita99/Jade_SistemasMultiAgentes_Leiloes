@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class Auction {
 
-	private final int initialNumberOfItems = 10;
+	private final int initialNumberOfItems = 50;
 	private final int numberOfItemsPerRound = 10;
 
 	private int round = 0;
