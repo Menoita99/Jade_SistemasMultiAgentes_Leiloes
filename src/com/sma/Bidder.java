@@ -33,7 +33,7 @@ public class Bidder extends Agent{
 	private BidderBehavior behavior = new BidderBehavior();
 	private AID auctionner;
 
-	private int money = 0;
+	private double money = 0;
 
 	private HashMap<AuctionItem,Integer> itemsWon = new HashMap<>();
 	private HashMap<AuctionItem,Integer> priorities = new HashMap<>();
@@ -66,7 +66,6 @@ public class Bidder extends Agent{
 			newMsg.setContent(MessageType.JOIN.toString()+"\n");
 			newMsg.addReceiver(result[i].getName());
 			send(newMsg);
-			System.out.println("Sending join request to: "+result[i].getName());
 		}
 	}
 
@@ -84,7 +83,6 @@ public class Bidder extends Agent{
 		sd.setName(getLocalName()+" bidder");
 		dfd.addServices(sd);
 		DFService.register(this, dfd);
-		System.out.println("Bidder "+getName()+" with aid "+getAID()+" ready");
 	}
 
 
@@ -95,6 +93,7 @@ public class Bidder extends Agent{
 
 	public void defineItemsPriorities(List<AuctionItem> items) {
 		Random r = new Random();
+		priorities.clear();
 		LinkedList<AuctionItem> wanted = new LinkedList<>();
 		while(wanted.size() < itemsWanted && items.size()>0) {
 			AuctionItem item = items.get(r.nextInt(items.size()));
@@ -133,9 +132,6 @@ public class Bidder extends Agent{
 		public void action() {
 			ACLMessage msg = myAgent.receive();
 			if(msg != null) {
-				System.out.println("====================================================");
-				System.out.println(msg);
-				System.out.println("====================================================");
 				MessageType type = MessageType.valueOf(msg.getContent().split("\n")[0]);
 				switch (type) {
 				case JOIN: {
@@ -192,9 +188,14 @@ public class Bidder extends Agent{
 			int prioProb = 10 + currentItemPriority * 5;
 			int bidProb = prioProb + priceProb;
 			
-			System.out.println("Biding prob: "+bidProb);
-			if(price >= money || r.nextInt(100) < bidProb)
+			System.out.println("BIDDER " + getAID().getLocalName() + " | Actual money: " + money);
+			
+			int nextInt = r.nextInt(100);
+			if(price >= money || nextInt >= bidProb) {
+				System.out.println("BIDDER " + getAID().getLocalName() + " | I'm not going to bid " + bidProb);
 				return;
+			}
+			
 			
 			double complement = Math.max(Math.min((money - price),10) * r.nextDouble() ,0.01);
 			complement = new BigDecimal(complement).setScale(2, RoundingMode.HALF_UP).doubleValue();
@@ -204,7 +205,7 @@ public class Bidder extends Agent{
 			ACLMessage newMsg = new ACLMessage(ACLMessage.REQUEST); 
 			newMsg.setContent(MessageType.BIDDING.toString()+"\n"+new Gson().toJson(offer));
 			newMsg.addReceiver(auctionner);
-			System.out.println("Biddng on item: " + currentItemInAuction + " for: " + offer);
+			System.out.println("BIDDER " + getAID().getLocalName() + " | Bidding on" + currentItemInAuction.getId() + " for: " + offer);
 			send(newMsg);
 		}
 
@@ -214,20 +215,15 @@ public class Bidder extends Agent{
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			Type type = new TypeToken<Pair<String, Double>>() {}.getType();
 			Pair<String, Double> item = new Gson().fromJson(json, type);
-			System.out.println("=================================");
-			System.out.println("PAIR" + item);
-			System.out.println("AID:" + getAID().getName());
-			System.out.println("Winner AID: " + item.getKey());
-			System.out.println(!getAID().getName().equals(item.getKey()));
 			currentItemInAuction.setPrice(item.getValue());
-			if(!getAID().getName().equals(item.getKey()) || msg.getPerformative() == ACLMessage.REFUSE)
+			if(!getAID().getName().equals(item.getKey()) || msg.getPerformative() == ACLMessage.REFUSE) {
 				bid();
+			}
 		}
 
 
 
 		private void processJoin(ACLMessage msg) {
-			System.out.println("Received Join message from "+msg.getSender());
 			if(msg.getPerformative() == ACLMessage.ACCEPT_PROPOSAL) {
 				if(auctionner == null)
 					auctionner = msg.getSender();
@@ -265,12 +261,13 @@ public class Bidder extends Agent{
 		
 		private void processWinner(ACLMessage msg) {
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
-			Type listType = new TypeToken<Pair<AID,AuctionItem>>() {}.getType();
-			Pair<AID,AuctionItem> winner = new Gson().fromJson(json, listType);
-			if(winner != null && getAID().equals(winner.getKey())) {
-				money -= winner.getValue().getPrice();
+			Type listType = new TypeToken<Pair<String,AuctionItem>>() {}.getType();
+			Pair<String,AuctionItem> winner = new Gson().fromJson(json, listType);
+			if(winner != null && getAID().getName().equals(winner.getKey())) {
+				money = money - winner.getValue().getPrice();
+				money = new BigDecimal(money).setScale(2, RoundingMode.HALF_UP).doubleValue();
+				System.out.println("BIDDER " + getAID().getLocalName() + "| I have " + money + " euros left. :(");
 				itemsWon.put(winner.getValue(), priorities.getOrDefault(winner.getValue(), 0));
-				System.out.println("I won!!! "+winner);
 			}
 		}
 
