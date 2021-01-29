@@ -20,7 +20,7 @@ public class Auction {
 	}
 
 	public LinkedList<AuctionItem> nextRound() {
-		if ((round + 1) * numberOfItemsPerRound < items.size()) {
+		if ((round + 1) * numberOfItemsPerRound <= items.size()) {
 			round++;
 			return new LinkedList<>(items.subList((round - 1) * numberOfItemsPerRound, (round) * numberOfItemsPerRound));
 		}
