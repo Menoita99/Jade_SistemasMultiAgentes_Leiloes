@@ -3,11 +3,9 @@ package com.sma;
 import java.util.Random;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 public class AuctionItem {
 
@@ -21,14 +19,18 @@ public class AuctionItem {
 		price = (int) (Math.random() * 50);
 		id =adjectives[new Random().nextInt(adjectives.length)] +" "+ objects[new Random().nextInt(objects.length)] ;
 	}
-	
-	
-	@Override
-	public boolean equals(Object obj) {
-		if(obj instanceof AuctionItem)
-			return id.equals(((AuctionItem) obj).id);
-		else
-			return false;
-		
-	}
+
+
+//	@Override
+//	public boolean equals(Object obj) {
+//		if(obj instanceof AuctionItem)
+//			return id.equals(((AuctionItem) obj).id);
+//		else
+//			return false;
+//	}
+//	
+//	@Override
+//	public int hashCode() {
+//		return id.hashCode();
+//	}
 }

@@ -24,6 +24,6 @@ public class Auction {
 			round++;
 			return new LinkedList<>(items.subList((round - 1) * numberOfItemsPerRound, (round) * numberOfItemsPerRound));
 		}
-		return null;
+		return new LinkedList<>();
 	}
 }

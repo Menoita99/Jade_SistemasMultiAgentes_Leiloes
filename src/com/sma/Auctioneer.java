@@ -101,11 +101,11 @@ public class Auctioneer extends Agent {
 			biddingMessage.setContent(MessageType.START_BIDDING.toString() + "\n" + gson.toJson(auctionItems.pop()));
 			for (AID bidder : bidders)
 				biddingMessage.addReceiver(bidder);
-			send(biddingMessage);
 			biddingTimer = new OneSchedualTimer(() -> {
 				biddingPhase();
 				announceWinner();
 			}, 5000);
+			send(biddingMessage);
 		} else {
 			startNewRound();
 		}

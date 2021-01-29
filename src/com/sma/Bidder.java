@@ -111,7 +111,7 @@ public class Bidder extends Agent{
 				max = totalMax - (i+1) * 5;
 				prio = r.nextInt(Math.max(min,Math.min(max, 15)- 5)) + 5 ;
 				totalMax -= prio; 
-				min = (int) Math.ceil(totalMax / Math.max(1,i));
+				min = (int) Math.ceil(totalMax / Math.max(1,i+1));
 			}else 
 				prio = maxPoints - sum;
 			sum += prio;
@@ -169,6 +169,7 @@ public class Bidder extends Agent{
 
 
 		private void processStartBidding(ACLMessage msg) {
+			System.out.println();
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			currentItemInAuction = new Gson().fromJson(json,AuctionItem.class);
 			currentItemPriority = priorities.getOrDefault(currentItemInAuction, 0);
@@ -178,16 +179,17 @@ public class Bidder extends Agent{
 
 
 		private void bid() {
+			System.out.println("Running bid");
 			Random r = new Random();
 			double price = currentItemInAuction.getPrice();
-			int priceProb = (int) (-5 + ((money - price)/20));
+			int priceProb =  (5 - (int)((money - price)/20));
 			int prioProb = 10 + currentItemPriority * 5;
 			int bidProb = prioProb + priceProb;
 			
-			if(price >= money || r.nextInt(100) >= bidProb)
+			if(price >= money || r.nextInt(100) < bidProb)
 				return;
 			
-			double complement = Math.max((money - price) * r.nextDouble()*0.4 ,0.01);
+			double complement = Math.max(Math.min((money - price),10) * r.nextDouble() ,0.01);
 			complement = new BigDecimal(complement).setScale(2, RoundingMode.HALF_UP).doubleValue();
 			
 			double offer = price + complement ;
@@ -195,6 +197,7 @@ public class Bidder extends Agent{
 			ACLMessage newMsg = new ACLMessage(ACLMessage.REQUEST); 
 			newMsg.setContent(MessageType.BIDDING.toString()+"\n"+new Gson().toJson(offer));
 			newMsg.addReceiver(auctionner);
+			System.out.println("Bid: "+newMsg);
 			send(newMsg);
 		}
 
@@ -205,7 +208,8 @@ public class Bidder extends Agent{
 			Type listType = new TypeToken<Pair<AID, Double>>() {}.getType();
 			Pair<AID, Double> item = new Gson().fromJson(json, listType);
 			currentItemInAuction.setPrice(item.getValue());
-			bid();
+			if(!getAID().equals(item.getKey()))
+				bid();
 		}
 
 
@@ -251,7 +255,7 @@ public class Bidder extends Agent{
 			String json = msg.getContent().substring(msg.getContent().indexOf("\n"));
 			Type listType = new TypeToken<Pair<AID,AuctionItem>>() {}.getType();
 			Pair<AID,AuctionItem> winner = new Gson().fromJson(json, listType);
-			if(getAID().equals(winner.getKey())) {
+			if(winner != null && getAID().equals(winner.getKey())) {
 				money -= winner.getValue().getPrice();
 				itemsWon.put(winner.getValue(), priorities.getOrDefault(winner.getValue(), 0));
 				System.out.println("I won!!! "+winner);

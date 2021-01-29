@@ -33,8 +33,8 @@ public class OneSchedualTimer{
 
 	public OneSchedualTimer(Runnable task,long millis){
 		this.task = task;
-		worker.start();
 		worker = new Worker(millis);
+		worker.start();
 		schedual(millis);
 	}
 
