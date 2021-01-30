@@ -1,5 +1,7 @@
 # Jade_SistemasMultiAgentes_Leiloes
 
+To run this project you will need maven
+
 To run:
 
 Start by running Jade, you can use this command:</br>
