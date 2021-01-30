@@ -1,0 +1,2400 @@
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "JOIN" 
+)
+(ACCEPT-PROPOSAL
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "JOIN" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "JOIN" 
+)
+(ACCEPT-PROPOSAL
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "JOIN" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_ROUND
+[{\"price\":40.0,\"id\":\"young sun glasses\"},{\"price\":24.0,\"id\":\"high shoe lace\"},{\"price\":49.0,\"id\":\"large balloon\"},{\"price\":13.0,\"id\":\"other sun glasses\"},{\"price\":36.0,\"id\":\"black conditioner\"},{\"price\":15.0,\"id\":\"important paint brush\"},{\"price\":13.0,\"id\":\"federal clamp\"},{\"price\":21.0,\"id\":\"economic clamp\"},{\"price\":43.0,\"id\":\"economic nail clippers\"},{\"price\":4.0,\"id\":\"free canvas\"}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_ROUND
+[{\"price\":40.0,\"id\":\"young sun glasses\"},{\"price\":24.0,\"id\":\"high shoe lace\"},{\"price\":49.0,\"id\":\"large balloon\"},{\"price\":13.0,\"id\":\"other sun glasses\"},{\"price\":36.0,\"id\":\"black conditioner\"},{\"price\":15.0,\"id\":\"important paint brush\"},{\"price\":13.0,\"id\":\"federal clamp\"},{\"price\":21.0,\"id\":\"economic clamp\"},{\"price\":43.0,\"id\":\"economic nail clippers\"},{\"price\":4.0,\"id\":\"free canvas\"}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "PRIORITIES
+[{\"key\":{\"price\":13.0,\"id\":\"federal clamp\"},\"value\":25},{\"key\":{\"price\":4.0,\"id\":\"free canvas\"},\"value\":5},{\"key\":{\"price\":36.0,\"id\":\"black conditioner\"},\"value\":5},{\"key\":{\"price\":13.0,\"id\":\"other sun glasses\"},\"value\":6},{\"key\":{\"price\":24.0,\"id\":\"high shoe lace\"},\"value\":10},{\"key\":{\"price\":43.0,\"id\":\"economic nail clippers\"},\"value\":9}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "PRIORITIES
+[{\"key\":{\"price\":49.0,\"id\":\"large balloon\"},\"value\":21},{\"key\":{\"price\":13.0,\"id\":\"federal clamp\"},\"value\":7},{\"key\":{\"price\":15.0,\"id\":\"important paint brush\"},\"value\":8},{\"key\":{\"price\":40.0,\"id\":\"young sun glasses\"},\"value\":10},{\"key\":{\"price\":24.0,\"id\":\"high shoe lace\"},\"value\":5},{\"key\":{\"price\":43.0,\"id\":\"economic nail clippers\"},\"value\":9}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":40.0,\"id\":\"young sun glasses\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":40.0,\"id\":\"young sun glasses\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+45.02" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":45.02}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":45.02}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":45.02,\"id\":\"young sun glasses\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":45.02,\"id\":\"young sun glasses\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":24.0,\"id\":\"high shoe lace\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":24.0,\"id\":\"high shoe lace\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":24.0,\"id\":\"high shoe lace\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":24.0,\"id\":\"high shoe lace\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":49.0,\"id\":\"large balloon\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":49.0,\"id\":\"large balloon\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+52.56" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":52.56}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":52.56}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":52.56,\"id\":\"large balloon\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":52.56,\"id\":\"large balloon\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":13.0,\"id\":\"other sun glasses\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":13.0,\"id\":\"other sun glasses\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+17.81" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":17.81}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":17.81}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":17.81,\"id\":\"other sun glasses\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":17.81,\"id\":\"other sun glasses\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":36.0,\"id\":\"black conditioner\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":36.0,\"id\":\"black conditioner\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":36.0,\"id\":\"black conditioner\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":36.0,\"id\":\"black conditioner\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":15.0,\"id\":\"important paint brush\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":15.0,\"id\":\"important paint brush\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+24.06" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":24.06}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":24.06}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":24.06,\"id\":\"important paint brush\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":24.06,\"id\":\"important paint brush\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":13.0,\"id\":\"federal clamp\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":13.0,\"id\":\"federal clamp\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+19.99" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":19.99}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":19.99}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":19.99,\"id\":\"federal clamp\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":19.99,\"id\":\"federal clamp\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":21.0,\"id\":\"economic clamp\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":21.0,\"id\":\"economic clamp\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":21.0,\"id\":\"economic clamp\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":21.0,\"id\":\"economic clamp\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":43.0,\"id\":\"economic nail clippers\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":43.0,\"id\":\"economic nail clippers\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":43.0,\"id\":\"economic nail clippers\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":43.0,\"id\":\"economic nail clippers\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":4.0,\"id\":\"free canvas\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":4.0,\"id\":\"free canvas\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":4.0,\"id\":\"free canvas\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":4.0,\"id\":\"free canvas\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_ROUND
+[{\"price\":15.0,\"id\":\"old balloon\"},{\"price\":35.0,\"id\":\"free video games\"},{\"price\":33.0,\"id\":\"small CD\"},{\"price\":18.0,\"id\":\"full toothpaste\"},{\"price\":0.0,\"id\":\"late scotch tape\"},{\"price\":42.0,\"id\":\"only sandal\"},{\"price\":0.0,\"id\":\"other USB drive\"},{\"price\":49.0,\"id\":\"public key chain\"},{\"price\":13.0,\"id\":\"real shoe lace\"},{\"price\":42.0,\"id\":\"only teddies\"}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_ROUND
+[{\"price\":15.0,\"id\":\"old balloon\"},{\"price\":35.0,\"id\":\"free video games\"},{\"price\":33.0,\"id\":\"small CD\"},{\"price\":18.0,\"id\":\"full toothpaste\"},{\"price\":0.0,\"id\":\"late scotch tape\"},{\"price\":42.0,\"id\":\"only sandal\"},{\"price\":0.0,\"id\":\"other USB drive\"},{\"price\":49.0,\"id\":\"public key chain\"},{\"price\":13.0,\"id\":\"real shoe lace\"},{\"price\":42.0,\"id\":\"only teddies\"}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "PRIORITIES
+[{\"key\":{\"price\":15.0,\"id\":\"old balloon\"},\"value\":11},{\"key\":{\"price\":0.0,\"id\":\"late scotch tape\"},\"value\":11},{\"key\":{\"price\":33.0,\"id\":\"small CD\"},\"value\":6},{\"key\":{\"price\":0.0,\"id\":\"other USB drive\"},\"value\":8},{\"key\":{\"price\":35.0,\"id\":\"free video games\"},\"value\":11},{\"key\":{\"price\":49.0,\"id\":\"public key chain\"},\"value\":13}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "PRIORITIES
+[{\"key\":{\"price\":18.0,\"id\":\"full toothpaste\"},\"value\":11},{\"key\":{\"price\":0.0,\"id\":\"late scotch tape\"},\"value\":13},{\"key\":{\"price\":33.0,\"id\":\"small CD\"},\"value\":7},{\"key\":{\"price\":35.0,\"id\":\"free video games\"},\"value\":10},{\"key\":{\"price\":42.0,\"id\":\"only sandal\"},\"value\":12},{\"key\":{\"price\":0.0,\"id\":\"other USB drive\"},\"value\":7}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":15.0,\"id\":\"old balloon\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":15.0,\"id\":\"old balloon\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":15.0,\"id\":\"old balloon\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":15.0,\"id\":\"old balloon\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":35.0,\"id\":\"free video games\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":35.0,\"id\":\"free video games\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+40.2" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":40.2}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":40.2}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+46.11" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":46.11}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":46.11}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":46.11,\"id\":\"free video games\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":46.11,\"id\":\"free video games\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":33.0,\"id\":\"small CD\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":33.0,\"id\":\"small CD\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+41.34" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":41.34}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":41.34}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+42.12" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":42.12}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":42.12}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+43.27" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":43.27}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":43.27}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+48.19" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":48.19}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":48.19}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":48.19,\"id\":\"small CD\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":48.19,\"id\":\"small CD\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":18.0,\"id\":\"full toothpaste\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":18.0,\"id\":\"full toothpaste\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+18.1" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":18.1}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":18.1}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":18.1,\"id\":\"full toothpaste\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":18.1,\"id\":\"full toothpaste\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":0.0,\"id\":\"late scotch tape\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":0.0,\"id\":\"late scotch tape\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+9.14" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":9.14}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":9.14}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+18.71" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":18.71}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":18.71}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":18.71,\"id\":\"late scotch tape\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":18.71,\"id\":\"late scotch tape\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":42.0,\"id\":\"only sandal\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":42.0,\"id\":\"only sandal\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":42.0,\"id\":\"only sandal\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":42.0,\"id\":\"only sandal\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":0.0,\"id\":\"other USB drive\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":0.0,\"id\":\"other USB drive\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+7.57" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":7.57}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":7.57}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+14.94" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":14.94}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":14.94}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":14.94,\"id\":\"other USB drive\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":14.94,\"id\":\"other USB drive\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":49.0,\"id\":\"public key chain\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":49.0,\"id\":\"public key chain\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+57.22" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":57.22}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":57.22}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":57.22,\"id\":\"public key chain\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":57.22,\"id\":\"public key chain\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":13.0,\"id\":\"real shoe lace\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":13.0,\"id\":\"real shoe lace\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":13.0,\"id\":\"real shoe lace\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":13.0,\"id\":\"real shoe lace\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":42.0,\"id\":\"only teddies\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":42.0,\"id\":\"only teddies\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":42.0,\"id\":\"only teddies\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":42.0,\"id\":\"only teddies\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_ROUND
+[{\"price\":42.0,\"id\":\"bad CD\"},{\"price\":11.0,\"id\":\"able bananas\"},{\"price\":22.0,\"id\":\"recent canvas\"},{\"price\":3.0,\"id\":\"real piano\"},{\"price\":5.0,\"id\":\"major magnet\"},{\"price\":33.0,\"id\":\"possible tv\"},{\"price\":27.0,\"id\":\"old paint brush\"},{\"price\":6.0,\"id\":\"whole nail clippers\"},{\"price\":19.0,\"id\":\"black CD\"},{\"price\":9.0,\"id\":\"good packing peanuts\"}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_ROUND
+[{\"price\":42.0,\"id\":\"bad CD\"},{\"price\":11.0,\"id\":\"able bananas\"},{\"price\":22.0,\"id\":\"recent canvas\"},{\"price\":3.0,\"id\":\"real piano\"},{\"price\":5.0,\"id\":\"major magnet\"},{\"price\":33.0,\"id\":\"possible tv\"},{\"price\":27.0,\"id\":\"old paint brush\"},{\"price\":6.0,\"id\":\"whole nail clippers\"},{\"price\":19.0,\"id\":\"black CD\"},{\"price\":9.0,\"id\":\"good packing peanuts\"}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "PRIORITIES
+[{\"key\":{\"price\":3.0,\"id\":\"real piano\"},\"value\":11},{\"key\":{\"price\":27.0,\"id\":\"old paint brush\"},\"value\":7},{\"key\":{\"price\":33.0,\"id\":\"possible tv\"},\"value\":7},{\"key\":{\"price\":22.0,\"id\":\"recent canvas\"},\"value\":9},{\"key\":{\"price\":5.0,\"id\":\"major magnet\"},\"value\":12},{\"key\":{\"price\":6.0,\"id\":\"whole nail clippers\"},\"value\":14}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "PRIORITIES
+[{\"key\":{\"price\":42.0,\"id\":\"bad CD\"},\"value\":10},{\"key\":{\"price\":27.0,\"id\":\"old paint brush\"},\"value\":5},{\"key\":{\"price\":3.0,\"id\":\"real piano\"},\"value\":12},{\"key\":{\"price\":33.0,\"id\":\"possible tv\"},\"value\":15},{\"key\":{\"price\":22.0,\"id\":\"recent canvas\"},\"value\":7},{\"key\":{\"price\":6.0,\"id\":\"whole nail clippers\"},\"value\":11}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":42.0,\"id\":\"bad CD\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":42.0,\"id\":\"bad CD\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+44.64" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":44.64}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":44.64}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":44.64,\"id\":\"bad CD\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":44.64,\"id\":\"bad CD\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":11.0,\"id\":\"able bananas\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":11.0,\"id\":\"able bananas\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":11.0,\"id\":\"able bananas\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":11.0,\"id\":\"able bananas\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":22.0,\"id\":\"recent canvas\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":22.0,\"id\":\"recent canvas\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+23.82" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":23.82}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":23.82}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+33.17" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":33.17}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":33.17}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":33.17,\"id\":\"recent canvas\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":33.17,\"id\":\"recent canvas\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":3.0,\"id\":\"real piano\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":3.0,\"id\":\"real piano\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+5.5" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":5.5}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":5.5}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+11.17" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":11.17}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":11.17}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":11.17,\"id\":\"real piano\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":11.17,\"id\":\"real piano\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":5.0,\"id\":\"major magnet\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":5.0,\"id\":\"major magnet\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+10.88" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":10.88}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":10.88}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+17.44" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":17.44}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":17.44}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":17.44,\"id\":\"major magnet\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":17.44,\"id\":\"major magnet\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":33.0,\"id\":\"possible tv\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":33.0,\"id\":\"possible tv\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+38.28" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":38.28}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":38.28}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":38.28,\"id\":\"possible tv\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":38.28,\"id\":\"possible tv\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":27.0,\"id\":\"old paint brush\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":27.0,\"id\":\"old paint brush\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":27.0,\"id\":\"old paint brush\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":27.0,\"id\":\"old paint brush\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":6.0,\"id\":\"whole nail clippers\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":6.0,\"id\":\"whole nail clippers\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+9.6" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":9.6}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":9.6}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+15.72" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":15.72}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":15.72}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":15.72,\"id\":\"whole nail clippers\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":15.72,\"id\":\"whole nail clippers\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":19.0,\"id\":\"black CD\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":19.0,\"id\":\"black CD\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":19.0,\"id\":\"black CD\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":19.0,\"id\":\"black CD\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":9.0,\"id\":\"good packing peanuts\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":9.0,\"id\":\"good packing peanuts\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":9.0,\"id\":\"good packing peanuts\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":9.0,\"id\":\"good packing peanuts\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_ROUND
+[{\"price\":48.0,\"id\":\"special tomato\"},{\"price\":4.0,\"id\":\"better white out\"},{\"price\":12.0,\"id\":\"social carrots\"},{\"price\":13.0,\"id\":\"different leg warmers\"},{\"price\":15.0,\"id\":\"social seat belt\"},{\"price\":19.0,\"id\":\"better coasters\"},{\"price\":28.0,\"id\":\"right balloon\"},{\"price\":27.0,\"id\":\"best scotch tape\"},{\"price\":26.0,\"id\":\"small sponge\"},{\"price\":17.0,\"id\":\"real leg warmers\"}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_ROUND
+[{\"price\":48.0,\"id\":\"special tomato\"},{\"price\":4.0,\"id\":\"better white out\"},{\"price\":12.0,\"id\":\"social carrots\"},{\"price\":13.0,\"id\":\"different leg warmers\"},{\"price\":15.0,\"id\":\"social seat belt\"},{\"price\":19.0,\"id\":\"better coasters\"},{\"price\":28.0,\"id\":\"right balloon\"},{\"price\":27.0,\"id\":\"best scotch tape\"},{\"price\":26.0,\"id\":\"small sponge\"},{\"price\":17.0,\"id\":\"real leg warmers\"}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "PRIORITIES
+[{\"key\":{\"price\":27.0,\"id\":\"best scotch tape\"},\"value\":14},{\"key\":{\"price\":48.0,\"id\":\"special tomato\"},\"value\":8},{\"key\":{\"price\":13.0,\"id\":\"different leg warmers\"},\"value\":8},{\"key\":{\"price\":19.0,\"id\":\"better coasters\"},\"value\":8},{\"key\":{\"price\":12.0,\"id\":\"social carrots\"},\"value\":10},{\"key\":{\"price\":15.0,\"id\":\"social seat belt\"},\"value\":12}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "PRIORITIES
+[{\"key\":{\"price\":27.0,\"id\":\"best scotch tape\"},\"value\":6},{\"key\":{\"price\":13.0,\"id\":\"different leg warmers\"},\"value\":8},{\"key\":{\"price\":17.0,\"id\":\"real leg warmers\"},\"value\":6},{\"key\":{\"price\":19.0,\"id\":\"better coasters\"},\"value\":21},{\"key\":{\"price\":26.0,\"id\":\"small sponge\"},\"value\":8},{\"key\":{\"price\":15.0,\"id\":\"social seat belt\"},\"value\":11}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":48.0,\"id\":\"special tomato\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":48.0,\"id\":\"special tomato\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+51.05" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":51.05}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":51.05}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":51.05,\"id\":\"special tomato\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":51.05,\"id\":\"special tomato\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":4.0,\"id\":\"better white out\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":4.0,\"id\":\"better white out\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":4.0,\"id\":\"better white out\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":4.0,\"id\":\"better white out\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":12.0,\"id\":\"social carrots\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":12.0,\"id\":\"social carrots\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":12.0,\"id\":\"social carrots\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":12.0,\"id\":\"social carrots\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":13.0,\"id\":\"different leg warmers\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":13.0,\"id\":\"different leg warmers\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+21.38" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+15.97" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":21.38}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":21.38}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+24.13" 
+)
+(REFUSE
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":21.38}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":24.13}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":24.13}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+31.43" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":31.43}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":31.43}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":31.43,\"id\":\"different leg warmers\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":31.43,\"id\":\"different leg warmers\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":15.0,\"id\":\"social seat belt\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":15.0,\"id\":\"social seat belt\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+21.82" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":21.82}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":21.82}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+22.71" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":22.71}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":22.71}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+26.38" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":26.38}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":26.38}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":26.38,\"id\":\"social seat belt\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":26.38,\"id\":\"social seat belt\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":19.0,\"id\":\"better coasters\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":19.0,\"id\":\"better coasters\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+28.09" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+28.16" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":28.09}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":28.09}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":28.16}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":28.16}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+35.98" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+29.78" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":35.98}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":35.98}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+41.33" 
+)
+(REFUSE
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":35.98}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+39.15" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":41.33}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":41.33}" 
+)
+(REFUSE
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":41.33}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+50.17" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":50.17}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":50.17}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+55.59" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":55.59}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":55.59}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+59.86" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":59.86}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":59.86}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+63.58" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":63.58}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":63.58}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+71.5" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":71.5}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":71.5}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":71.5,\"id\":\"better coasters\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":71.5,\"id\":\"better coasters\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":28.0,\"id\":\"right balloon\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":28.0,\"id\":\"right balloon\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":28.0,\"id\":\"right balloon\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":28.0,\"id\":\"right balloon\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":27.0,\"id\":\"best scotch tape\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":27.0,\"id\":\"best scotch tape\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+33.75" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":33.75}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":33.75}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":33.75,\"id\":\"best scotch tape\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":33.75,\"id\":\"best scotch tape\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":26.0,\"id\":\"small sponge\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":26.0,\"id\":\"small sponge\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":26.0,\"id\":\"small sponge\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":26.0,\"id\":\"small sponge\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":17.0,\"id\":\"real leg warmers\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":17.0,\"id\":\"real leg warmers\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":17.0,\"id\":\"real leg warmers\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":17.0,\"id\":\"real leg warmers\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_ROUND
+[{\"price\":24.0,\"id\":\"international paint brush\"},{\"price\":44.0,\"id\":\"certain nail clippers\"},{\"price\":49.0,\"id\":\"little mouse pad\"},{\"price\":2.0,\"id\":\"early canvas\"},{\"price\":4.0,\"id\":\"little sandal\"},{\"price\":47.0,\"id\":\"right scotch tape\"},{\"price\":28.0,\"id\":\"social USB drive\"},{\"price\":21.0,\"id\":\"local doll\"},{\"price\":41.0,\"id\":\"real seat belt\"},{\"price\":8.0,\"id\":\"human shoe lace\"}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_ROUND
+[{\"price\":24.0,\"id\":\"international paint brush\"},{\"price\":44.0,\"id\":\"certain nail clippers\"},{\"price\":49.0,\"id\":\"little mouse pad\"},{\"price\":2.0,\"id\":\"early canvas\"},{\"price\":4.0,\"id\":\"little sandal\"},{\"price\":47.0,\"id\":\"right scotch tape\"},{\"price\":28.0,\"id\":\"social USB drive\"},{\"price\":21.0,\"id\":\"local doll\"},{\"price\":41.0,\"id\":\"real seat belt\"},{\"price\":8.0,\"id\":\"human shoe lace\"}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "PRIORITIES
+[{\"key\":{\"price\":8.0,\"id\":\"human shoe lace\"},\"value\":8},{\"key\":{\"price\":49.0,\"id\":\"little mouse pad\"},\"value\":13},{\"key\":{\"price\":28.0,\"id\":\"social USB drive\"},\"value\":5},{\"key\":{\"price\":47.0,\"id\":\"right scotch tape\"},\"value\":12},{\"key\":{\"price\":44.0,\"id\":\"certain nail clippers\"},\"value\":9},{\"key\":{\"price\":2.0,\"id\":\"early canvas\"},\"value\":13}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "PRIORITIES
+[{\"key\":{\"price\":21.0,\"id\":\"local doll\"},\"value\":12},{\"key\":{\"price\":8.0,\"id\":\"human shoe lace\"},\"value\":12},{\"key\":{\"price\":47.0,\"id\":\"right scotch tape\"},\"value\":6},{\"key\":{\"price\":44.0,\"id\":\"certain nail clippers\"},\"value\":11},{\"key\":{\"price\":24.0,\"id\":\"international paint brush\"},\"value\":14},{\"key\":{\"price\":2.0,\"id\":\"early canvas\"},\"value\":5}]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":24.0,\"id\":\"international paint brush\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":24.0,\"id\":\"international paint brush\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+32.2" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":32.2}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":32.2}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":32.2,\"id\":\"international paint brush\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":32.2,\"id\":\"international paint brush\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":44.0,\"id\":\"certain nail clippers\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":44.0,\"id\":\"certain nail clippers\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+53.51" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":53.51}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":53.51}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+55.54" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":55.54}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":55.54}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+63.63" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":63.63}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":63.63}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+69.71" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":69.71}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":69.71}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":69.71,\"id\":\"certain nail clippers\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":69.71,\"id\":\"certain nail clippers\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":49.0,\"id\":\"little mouse pad\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":49.0,\"id\":\"little mouse pad\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+54.71" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":54.71}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":54.71}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+56.53" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":56.53}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":56.53}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+65.78" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":65.78}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":65.78}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":65.78,\"id\":\"little mouse pad\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":65.78,\"id\":\"little mouse pad\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":2.0,\"id\":\"early canvas\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":2.0,\"id\":\"early canvas\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+9.38" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+8.92" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":9.38}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":9.38}" 
+)
+(REFUSE
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":9.38}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":9.38,\"id\":\"early canvas\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b@192.168.1.83:1099/JADE\",\"value\":{\"price\":9.38,\"id\":\"early canvas\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":4.0,\"id\":\"little sandal\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":4.0,\"id\":\"little sandal\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":4.0,\"id\":\"little sandal\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":4.0,\"id\":\"little sandal\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":47.0,\"id\":\"right scotch tape\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":47.0,\"id\":\"right scotch tape\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":47.0,\"id\":\"right scotch tape\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":47.0,\"id\":\"right scotch tape\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":28.0,\"id\":\"social USB drive\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":28.0,\"id\":\"social USB drive\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":28.0,\"id\":\"social USB drive\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":28.0,\"id\":\"social USB drive\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":21.0,\"id\":\"local doll\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":21.0,\"id\":\"local doll\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+21.33" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":21.33}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":21.33}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":21.33,\"id\":\"local doll\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":21.33,\"id\":\"local doll\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":41.0,\"id\":\"real seat belt\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":41.0,\"id\":\"real seat belt\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":41.0,\"id\":\"real seat belt\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"no biddings yet\",\"value\":{\"price\":41.0,\"id\":\"real seat belt\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":8.0,\"id\":\"human shoe lace\"}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "START_BIDDING
+{\"price\":8.0,\"id\":\"human shoe lace\"}" 
+)
+(REQUEST
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+11.85" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":11.85}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "BIDDING
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":11.85}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":11.85,\"id\":\"human shoe lace\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "WINNER
+{\"key\":\"b1@192.168.1.83:1099/JADE\",\"value\":{\"price\":11.85,\"id\":\"human shoe lace\"}}" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "OVER" 
+)
+(INFORM
+ :sender  ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "OVER" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b1@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "RESULTS
+[159.0,23.81]" 
+)
+(INFORM
+ :sender  ( agent-identifier :name b@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc ))
+ :receiver  (set ( agent-identifier :name a@192.168.1.83:1099/JADE  :addresses (sequence http://GFIPT0714.gfi.pt:7778/acc )) )
+ :content  "RESULTS
+[169.0,28.7]" 
+)
