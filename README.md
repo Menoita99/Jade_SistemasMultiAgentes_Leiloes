@@ -5,7 +5,7 @@ To run this project you will need maven
 To run:
 
 Start by running Jade, you can use this command:</br>
-java -classpath jade/lib/jade.jar jade.Boot -GUI</br>
+java -classpath lib/jade.jar jade.Boot -GUI</br>
 </br>
 When the interface shows up, select the main container.</br>
 Now you should create the agents.</br>
