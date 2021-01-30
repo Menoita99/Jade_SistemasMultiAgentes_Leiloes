@@ -51,7 +51,7 @@ public class Auctioneer extends Agent {
 		try {
 			regist();
 			addBehaviour(behavior);
-			startJoinPhase(10);
+			startJoinPhase(20);
 		} catch (FIPAException e) {
 			e.printStackTrace();
 		}
