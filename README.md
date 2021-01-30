@@ -6,6 +6,7 @@ Start by running Jade, you can use this command:
 java -classpath jade/lib/jade.jar jade.Boot -GUI
 
 When the interface shows up, select the main container.
+</br>
 Now you should create the agents.
 First create an Auctioneer, (com.sma.Auctioneer)
 When the auctioneer is created you will have 20 seconds to create the bidders.
